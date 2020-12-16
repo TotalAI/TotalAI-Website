@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="TonicSunriseIcon.png" type="image/x-icon">
+    <link rel="icon" href="images/TotalAILogoTrans32.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 
-    <title>Tonic Sunrise</title>
+    <title>Total AI</title>
   </head>
   <body>
   
     <nav class="navbar sticky-top tai-navbar">
       <a class="navbar-brand" style="margin-top: -8px; margin-bottom: -8px;" href="index.html">
-        <img src="TonicSunriseLogo40.png" height="40" alt="" loading="lazy">
+        <img src="images/TotalAILogoTrans.png" height="40" alt="" loading="lazy">
       </a>
     
       <ul class="nav mr-auto">
@@ -40,13 +40,14 @@
         </li>
       </ul>
       <ul class="nav justify-content-end">
-        <li class="nav-item" style="padding-right: 100px;">
-          <a class="nav-link" href="#">
-            <svg class="bi" width="32" height="32" fill="currentColor">
-              <use xlink:href="bootstrap-icons.svg#heart-fill"/>
+        <li class="nav-item" style="padding-right: 50px;">
+          <a class="nav-link" target="_blank" href="https://github.com/TotalAI/TotalAI">
+            Download on GitHub
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
             </svg>
-
-            Buy On Unity Asset Store</a>
+          </a>
         </li>
       </ul>
     </nav>
@@ -228,11 +229,11 @@
             </svg>
           </a>
           <br><br>
-          Total AI (TAI) is a <b>complete agent based AI Framework for Unity</b>.  TAI is currently in Beta
-          and is available for purchase in the
+          Total AI (TAI) is a <b>complete open source agent based AI Framework for Unity</b>.  TAI is currently in Alpha
+          and is available for FREE on
           <nobr>
-            <a class="text-link" target="_blank" href="https://assetstore.unity.com">
-              Unity Asset Store
+            <a class="text-link" target="_blank" href="https://github.com/TotalAI/TotalAI">
+              GitHub
               <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
@@ -247,7 +248,7 @@
           <a class="text-link" href="doc-scriptableobjects.html">ScriptableObject's</a> pluggable data and logic ability.
           This makes writing and plugging in your own custom AI logic easy.
           <br><br>
-          <b>Total AI is currently in Beta so expect bugs/issues.</b>
+          <b>Total AI is currently in Alpha so expect bugs/issues.</b>
         </p>
         
         <h3>How Total AI Works</h3>
@@ -285,14 +286,14 @@
         <h3>General AI Framework</h3>
         <hr>
         <p>
-          Total AI was been designed to be flexible to accomodate many different types and hyprids of AI Logic.
+          Total AI is designed to be flexible to accomodate many different types and hyprids of AI Logic.
           In fact each Agent in your game could be using a different type of AI.  This is due to how all of the key
           logic for an Agent is in Types that inherit from Scriptable Objects with the two key types being the Decider Type
           and the Planner Type.  Every agent gets its base configuration from its Agent Type but it can then use
           Agent Type Overrides to change that setup configuration.  Thus every Agent even if they are of the same Agent Type
           can be using different AI Logic.
           <br><br>
-          Check out these pages for specific info on each AI Type:
+          The following AI Types are currently implemented:
         </p>
         <ul>
           <li><a class="text-link" href="doc-fsm.html">Finite State Machines (FSM)</a></li>
@@ -339,8 +340,8 @@
           different logic.
         </p>
         <div style="overflow:hidden; padding-bottom: 15px; margin-right: -200px;">
-          <a target="_blank" href="AgentFlow.png">
-            <img src="AgentFlow.png" width="100%">
+          <a target="_blank" href="images/AgentFlow.png">
+            <img src="images/AgentFlow.png" width="100%">
           </a>
           <br>
           <i>Click on the diagram for full size.</i>
