@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="TonicSunriseIcon.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+
+    <title>Tonic Sunrise</title>
+  </head>
+  <body>
+  
+    <nav class="navbar sticky-top tai-navbar">
+      <a class="navbar-brand" style="margin-top: -8px; margin-bottom: -8px;" href="index.html">
+        <img src="TonicSunriseLogo40.png" height="40" alt="" loading="lazy">
+      </a>
+    
+      <ul class="nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="doc-introduction.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="videos.html">Videos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+      </ul>
+      <ul class="nav justify-content-end">
+        <li class="nav-item" style="padding-right: 100px;">
+          <a class="nav-link" href="#">
+            <svg class="bi" width="32" height="32" fill="currentColor">
+              <use xlink:href="bootstrap-icons.svg#heart-fill"/>
+            </svg>
+
+            Buy On Unity Asset Store</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-md-3 col-xl-2" style="position: sticky; top: 0; z-index: 1000; height: calc(100vh - 4rem); order: 0; overflow-y: auto; padding-top: 10px; padding-bottom: 40px;">
+          <h3 class="nav-header">Getting Started</h3>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="doc-introduction.html">Introduction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-installation.html">Install/Setup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-demo.html">Demo World</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Type System</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-base-types.html">InputOutputTypes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-entity-types.html">EntityTypes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-level-types.html">LevelTypes</a>              
+            </li>
+          </ul>
+          <h3 class="nav-header">Entities</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-agent.html">Agent</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-worldobject.html">WorldObject</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="doc-agentevent.html">AgentEvent</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-inventory.html">Inventory</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Levels</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-drive.html">Drive</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-action.html">Action</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-attribute.html">Attribute</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-tag.html">Tag</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-role.html">Role</a>
+            </li>
+            
+          </ul>
+          <h3 class="nav-header">Agent</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-agent-main-loop.html">Main Loop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-movementtype.html">Movement Type</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-animationtype.html">Animation Type</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-sensortype.html">Sensor Type</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-memorytype.html">Memory Type</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-decider.html">Decider</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-behavior.html">Behavior</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-historytype.html">History Type</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Key Concepts</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-design-principles.html">Design Principles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-scriptableobjects.html">Scriptable Objects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-utility-curve.html">Utility Curve</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-utility-function.html">Utility Function</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-plannertype.html">Planner Types</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Editors</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-custom-inspectors.html">Inspectors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-setup-window.html">Setup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-agent-view-window.html">Agent View</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Included Types</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-core-types.html">Core Types</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-demo-types.html">Demo Types</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Basic UI & Placement</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-included-ui.html">Included UI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-placememnt.html">Placement</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Add-Ons & Integrations</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-behavior-designer.html">Behavior Designer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-astar-planning.html">A* Planning</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">API</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-api.html">Types</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">More Resources</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-more-resources.html">Links</a>
+            </li>
+          </ul>
+        </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
+        
+        <h1>Introduction</h1>
+        
+        <h3>What is Total AI?</h3>
+        <hr>
+        <p>
+          <a target="_blank" class="text-link" href="https://www.youtube.com">
+            Watch Introduction Video
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
+          <br><br>
+          Total AI (TAI) is a <b>complete agent based AI Framework for Unity</b>.  TAI is currently in Beta
+          and is available for purchase in the
+          <nobr>
+            <a class="text-link" target="_blank" href="https://assetstore.unity.com">
+              Unity Asset Store
+              <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+            </a>
+          </nobr>
+          <br><br>
+          The core of TAI are Agents who can to sense the world, create memories, plans, and act in order to reduce their Drives.  
+          This is accomplished with its 
+          <a class="text-link" href="doc-basetype.html">Type System</a> and Plan/Mapping System.  
+          It is also easy to extend and customize through 
+          <a class="text-link" href="doc-scriptableobjects.html">ScriptableObject's</a> pluggable data and logic ability.
+          This makes writing and plugging in your own custom AI logic easy.
+          <br><br>
+          <b>Total AI is currently in Beta so expect bugs/issues.</b>
+        </p>
+        
+        <h3>How Total AI Works</h3>
+        <hr>
+        <p>
+          TAI began with a series of simple questions.  Why should NPCs (Agents) do anything at all?  Why would
+          they choose one action over another action?  <b>What motivates Agents?</b>  This last
+          question led to the core of TAI. An Agent has Drives and <b>an Agent's central goal is to reduce their Drive
+          Levels to zero</b>.  A simple example is why should an Agent eat?  Because their Hunger Drive is high.  After eating
+          it is reduced and the Agent can focus on reducing a different Drive or perhaps if there are no other drives with higher
+          <b>Drive Utility</b> the Agent could continue to eat more.
+          
+          <br><br>
+          Drive Utility is similar to how Utility AI Works,
+          Drive levels are passed through a <a class="text-link" href="doc-utility-curve.html">Utility Curve</a> to
+          generate a 0-1 value for how important it is to reduce that Drive.  This allows Drives effects to be much more nuanced.
+          For example, with an S shaped curve the drive will initially not be important, gradually rise up in importance,
+          then be maxed out before the level actually reaches the Level's max.  This might be a suitable curve to represent
+          a Hunger Drive.
+          
+          <br><br>
+          The Drive with the highest utility is choosen (or an alternate selection algorithm can be used) and the Agent's
+          PlannerType then generates plans and the Agent's DeciderType chooses a plan to reduce this drive.
+          TAI ships with a GOAP and FSM PlannerType to create plans and DeciderTypes
+          that picks the plan with the highest score from a Utility Function.
+
+          <br><br>
+          Choosing a plan can use a <a class="text-link" href="doc-utility-function.html">Utility Function</a>
+          that takes into account the rate of decreasing the drive along
+          with any Side-Effects the plan might have.  For example, if the Agent is cold and wants to make a fire they
+          could burn their wood house down but the side-effect cost of losing a house would reduce the utility.  They
+          would find that the overall utility of gathering wood in the forest and burning that is much higher.
+        </p>
+
+        <h3>General AI Framework</h3>
+        <hr>
+        <p>
+          Total AI was been designed to be flexible to accomodate many different types and hyprids of AI Logic.
+          In fact each Agent in your game could be using a different type of AI.  This is due to how all of the key
+          logic for an Agent is in Types that inherit from Scriptable Objects with the two key types being the Decider Type
+          and the Planner Type.  Every agent gets its base configuration from its Agent Type but it can then use
+          Agent Type Overrides to change that setup configuration.  Thus every Agent even if they are of the same Agent Type
+          can be using different AI Logic.
+          <br><br>
+          Check out these pages for specific info on each AI Type:
+        </p>
+        <ul>
+          <li><a class="text-link" href="doc-fsm.html">Finite State Machines (FSM)</a></li>
+          <li><a class="text-link" href="doc-utility-ai.html">Utility AI (UAI)</a></li>
+          <li><a class="text-link" href="doc-GOAP.html">Goal Oriented Action Planning (GOAP)</a></li>
+        </ul>
+        
+        <h3>Type System</h3>
+        <hr>
+        <p>
+          The Type System is at the core of TAI.  Most objects and an object's levels have a type associated with them.
+          For example, An Agent has an Agent Type and an Agent's Attribute has an Attribute Type.  These types not only
+          define what the object is and its starting configuration
+          but also inform TAI which Mapping Types (core unit of planning) the object can be part of.  The Input Output Type
+          is the core class for these types.
+          <br><br>
+          For more information on the Type System go <a class="text-link" href="doc-base-types.html">here</a>.
+        </p>
+        <h3>Entities</h3>
+        <hr>
+        <p>
+          An Entity actual exists in the World.  It will be a Game Object with an Entity Component.  For Example,
+          an Agent will always have an Agent Component.  Agent inherits from Entity which inherits from MonoBehaviour.
+          Also every Entity has an Entity Type.  EntityType inherits from Input Output Type which inherits from Scriptable Object.
+          Similar to how Agent inherits from Entity, Agent Type inherits from Entity Type.
+          <br><br>
+          There are currently three types of Entities:
+        </p>
+        <ul>
+          <li><b><a class="text-link" href="doc-agent.html">Agent</a></b>:
+            Only Entity that can plan and act in the world.</li>
+          <li><b><a class="text-link" href="doc-worldobject.html">World Object</a></b>:
+            Any Entity that can't plan or act.  Can be built or grow and can have states.</li>
+          <li><b><a class="text-link" href="doc-agentevent.html">Agent Event</a></b>:
+            A multi-Agent coordinated event.  Can add Roles to Agents to force them to only have
+            certain Actions and Drives.</li>
+        </ul>
+        <h3>Agent's Main Loop</h3>
+        <hr>
+        <p>
+          The Agent's Main Loop handles the core requirement of being autonomous.  The diagram below shows the main loop along
+          with the Decider, Behavior, and interrupt logic.  As can be seen in the diagram, all of the core logic is in Types
+          (ScriptableObjects).  This allows for customization of any logic and also the ability to easily give different Agents
+          different logic.
+        </p>
+        <div style="overflow:hidden; padding-bottom: 15px; margin-right: -200px;">
+          <a target="_blank" href="AgentFlow.png">
+            <img src="AgentFlow.png" width="100%">
+          </a>
+          <br>
+          <i>Click on the diagram for full size.</i>
+        </div>
+        <h3>Plans</h3>
+        <hr>
+        <p>
+          A Plan is a tree structure with a Mapping representing a node with a parent and children.
+          It's Root Mapping (no parent) has to reduce a Drive Type.  The Planner Type is responsible for generating the plans and
+          returns a List of Plans that reduce a certain Drive Type.  The Decider Type is then responsible for selecting one of
+          the plans.
+        </p>
+        <h3>Mapping</h3>
+        <hr>
+        <p>
+          A Mapping represents the <b>core unit of a plan</b>.  Along with possibly having a parent and children Mappings,
+          it contains a Mapping Type, an Entity target if it needs one, and multiple inventory Entity targets if needed.
+          A Mapping Type consists of three main parts:
+          <ul>
+            <li><b>Input Conditions</b>: What needs to be true for an agent to perform this Mapping Type?</li>
+            <li><b>Output Changes</b>: What changes will occur at the start, during, at at the end of this Mapping Type?</li>
+            <li><b>Action Type</b>: Specifies the Behavior Type that will occur.  A Behavior Type holds the logic for
+              running the Mapping along with hooking into movement and animation systems.</li>
+          </ul>
+          For more information on the Mappings and Mapping Types go <a class="text-link" href="doc-mapping.html">here</a>.
+        </p>
+        
+        <h3>Drives</h3>
+        <hr>
+        <p>
+          Drives represent an Agent's motivation.  The Agent's goal is to reduce all Drive Levels to zero.
+          An Agent will prioritize each Drive based on it's current utility level and then go one by one in
+          order of Drives looking for a completed (all the Plan's leaf Mappings' Input Conditions are met) Plan to run.
+          The Drive ranking/selection logic is easy to customize and lives in the subclasses of
+          <a class="text-link" href="doc-decidertype.html">Decider Type</a>.  If there are multiple completed plans for a Drive
+          the Agent's Decider Type chooses one based on a <a class="text-link" href="doc-utility-function.html">Utility Function</a>
+          the generates an overall utility for each Plan.
+          <br><br>
+          It is also easy to use TAI without the Drive logic.  Just add one single Drive Type to every Agent and have your root
+          mappings reduce that single Drive Type.
+          <br><br>
+          For more information on Drive Types go <a class="text-link" href="doc-drivetype.html">here</a>.
+        </p>
+        
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+    </main>
+
+    <script>
+      $(document).ready(function() {
+        $(window).resize(function() {
+          resize();
+        });
+        function resize() {
+          var myheight = $(window).outerHeight(true) - 0;
+          $('.main').outerHeight(myheight);
+        }
+        resize();
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

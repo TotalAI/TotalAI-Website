@@ -1,0 +1,192 @@
+body {
+    font-family: "Roboto Mono", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    background-color: #121212;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    overflow-y: scroll;
+}
+
+b, strong {
+    font-weight: bolder;
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+ul {
+    color: rgba(255, 255, 255, 0.6) !important;;
+}
+
+.bg {
+    /* The image used */
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.tai-navbar {
+    background-color: #232323;
+    padding-left: 20;
+    padding-right: 20;
+    font-family: Goldman, "Roboto Mono", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+.nav-header {
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.nav-link:hover {
+    color: rgba(255, 132, 35, .9);
+}
+
+.nav-link {
+    display: block;
+    padding: .125rem 1rem;
+    font-family: Goldman;
+}
+
+.sub-link {
+    padding-left: 30px;
+    font-size: .95rem;
+}
+
+.content {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.content h1 {
+    margin: 0 0 0.65em;
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    padding-top: 30px;
+    font-size: 1.3rem;
+}
+h4 {
+    font-size: 1.1rem;
+}
+
+h1, h2, h3, h4, strong {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Goldman, "Roboto Mono", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+.active {
+    color: rgba(255, 132, 35, .8);
+    font-weight: 700;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tai-li {
+    padding-bottom: 10px;
+}
+
+.text-link {
+    color: rgba(255, 132, 35, .8);
+}
+
+.text-link:hover {
+    color: rgba(255, 132, 35, .9);
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.6em;
+}
+.table td {
+    border: none;
+}
+.table-tai {
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+}
+
+.table-tai.table-striped tbody tr:nth-of-type(odd) {
+    background-color:#282828;
+}
+
+.table-tai.table-striped {
+    background-color:#323232;
+}
+
+.main-header {
+    padding-top: 40px;
+    font-size: 96px;
+    font-weight: 300;
+    font-family: Goldman;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.main-subheader {
+    font-size: 48px;
+    font-weight: 300;
+    font-family: Goldman;
+    color: rgba(255, 132, 35, .8);
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.card-dark {
+    background-color: #282828;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Roboto Mono", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+.card-text-tai {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card-title-tai {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family: Goldman;
+}
+
+.btn-tai {
+    background-color: rgba(255, 132, 35, .8);
+    border-color: rgba(255, 132, 35, .8);
+    color: rgba(255, 255, 255, 0.8);
+}
+.btn-tai:hover {
+    background-color: rgba(255, 132, 35, .9);
+    border-color: rgba(255, 132, 35, .9);
+}
+.btn-tai:focus {
+    background-color: rgba(255, 132, 35, .9);
+    border-color: rgba(255, 132, 35, .9);
+    box-shadow: none !important;
+}
+
+.btn-tai:active {
+    background-color: rgba(255, 132, 35, .5) !important;
+    border-color: rgba(255, 132, 35, .5) !important;
+}
