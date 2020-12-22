@@ -111,8 +111,16 @@ a {
 .text-link {
     color: rgba(255, 132, 35, .8);
 }
-
 .text-link:hover {
+    color: rgba(255, 132, 35, .9);
+    text-decoration: none;
+}
+
+.github-link {
+    color: rgba(255, 132, 35, .8);
+    font-size: 0.85rem;
+}
+.github-link:hover {
     color: rgba(255, 132, 35, .9);
     text-decoration: none;
 }

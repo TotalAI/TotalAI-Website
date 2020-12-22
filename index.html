@@ -30,7 +30,13 @@
           <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="doc-introduction.html">Documentation</a>
+          <a class="nav-link" href="doc-introduction.html">Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="insp-introduction.html">Inspectors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="script-introduction.html">Scripts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="videos.html">Videos</a>
@@ -87,9 +93,8 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title card-title-tai">Powerful And Flexible AI</h5>
                 <p class="card-text card-text-tai">
-                  Total AI builds a strong foundation for Agent-based AI.  Drives and their utility make the top layer
-                  and determine which group of Plans an Agent should consider.
-                  GOAP, Utility AI, and FSM+ are the currently implemented Planners.
+                  Total AI builds a strong general foundation for agent based AI for a wide range of games.
+                  GOAP, Utility AI, and FSM are the currently implemented Planners with DeepRL coming soon.
                   Target Factors, which use principles of Utility AI, can dynamically select targets.
                 </p>
                 <a href="#" class="btn btn-primary btn-tai mt-auto">Total AI Overview Video</a>
@@ -101,7 +106,8 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title card-title-tai">Open Source</h5>
                 <p class="card-text card-text-tai">
-                  Open and free forever.  Contribute, submit bugs or feature requests.
+                  Licensed under the permissive MIT-License.  Open source and free forever.
+                  Contribute, submit bugs or feature requests.
                 </p>
                 <a href="doc-introduction.html" class="btn btn-primary btn-tai mt-auto">View on GitHub</a>
               </div>
@@ -116,9 +122,10 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title card-title-tai">Mappings & Plans</h5>
                 <p class="card-text card-text-tai">
-                  Total AI's core unit of a Plan is a Mapping.  It has InputConditions that must be true
-                  for it to be performed and OutputChanges which occur at various timings during
-                  the running of the Mapping.  Plans combine Mappings into a tree structure similar to GOAP.
+                  Total AI's core unit of a Plan is a Mapping.  It has Input Conditions that must be true
+                  for it to be performed and Output Changes which occur at various timings during
+                  the running of the Mapping.  Plans combine Mappings into a tree structure allowing
+                  for complex plans.
                 </p>
                 <a href="#" class="btn btn-primary btn-tai mt-auto">Planning Video</a>
               </div>
@@ -129,7 +136,7 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title card-title-tai">Intelligent Customizable Agents</h5>
                 <p class="card-text card-text-tai">
-                  Agents are divided into logical parts: Planner, Decider, Sensors, Memory, 
+                  Agents are divided into logical parts: Planner, Decider, Sensors, Memory, History, Utility Function,
                   Movement, and Animation.  Each part is easy to customize and an be different for each Agent.
                   Agents abilities and motivations are defined by their Actions, Drives, and Attributes.  They
                   also have a general inventory system which uses a Utility AI like system to pick
@@ -145,7 +152,7 @@
                 <h5 class="card-title card-title-tai">World Objects</h5>
                 <p class="card-text card-text-tai">
                   World Objects are non-Agent object that exists in the world.
-                  They can be built, can grow, can be damaged, can have states, and can change appearance
+                  They can be built, can grow, can be damaged, can have states, can be tagged, and can change appearance
                   based on any of these factors.  They also have inventory and can convert inventory using recipes.
                 </p>
                 <a href="doc-introduction.html" class="btn btn-primary btn-tai mt-auto">World Object Video</a>

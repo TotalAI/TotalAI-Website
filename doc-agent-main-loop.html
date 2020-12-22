@@ -27,7 +27,13 @@
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="doc-introduction.html">Documentation</a>
+          <a class="nav-link active" href="doc-introduction.html">Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="insp-introduction.html">Inspectors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="script-introduction.html">Scripts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="videos.html">Videos</a>
@@ -287,21 +293,6 @@
           Behavior by calling its Decider's Interrupt method and then run the die logic.  Since interrupts can come from
           two sources and both need to know about it, there is logic to inform the other system about the interrupt.
         </p>
-        <h3>Levels</h3>
-        <hr>
-        <p>
-          An agent's level are core to defining the Agent.  Every level consists of at least a Type and a level amount.
-          Currently an Agent has 5 levels.  The only required levels are Drives and Actions but Attributes are also
-          important.
-        </p>
-        <ul>
-          <li><b>Drives</b>: What motivates the agent?  The agent will try to reduce their drive levels.</li>
-          <li><b>Actions</b>: What can the agent do?  Action levels reflect the skill an Agent has at an ActionType.</li>
-          <li><b>Attributes</b>: Properties of the agent that have a value.  Some will move between a min-max range.</li>
-          <li><b>Tags</b>: Used for constraining Entities to only ones with certain tags.
-            A Tag can have an Entity relationship.</li>
-          <li><b>Roles</b>: What is this agent's job?  Causes changes to Drives and Actions.</li>
-        </ul>
       </div>
       <div class="col-md-3">
 
