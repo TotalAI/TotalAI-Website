@@ -80,7 +80,7 @@
               <a class="nav-link" href="doc-worldobject.html">WorldObject</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="doc-agentevent.html">AgentEvent</a>
+              <a class="nav-link" href="doc-agentevent.html">AgentEvent</a>
             </li>
           </ul>
           <h3 class="nav-header">Levels</h3>
@@ -166,7 +166,7 @@
               <a class="nav-link" href="doc-utility-function.html">Utility Function</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-included-ui.html">UI & Placement</a>
+              <a class="nav-link active" href="doc-included-ui.html">UI & Placement</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="doc-more-resources.html">External Links</a>
@@ -177,51 +177,18 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1>Agent Event</h1>
+        <h1>UI & Placement</h1>
         
-        <h3>What is an Agent Event?</h3>
+        <h3>Basic UI Included</h3>
         <hr>
         <p>
-          An Agent Event allows for coordinated mult-agent events to occur.  Every Agent Event has to have an Agent creator and
-          other Agents called attendees.  An Agent Event has the following life cycle:
-          <ul>
-            <li><b>Waiting</b>: Starts in this state after creation.  Stays here until enough agents have joined or it times out.</li>
-            <li><b>Starting</b>: Enough Agents have joined.  The Event is now Starting.</li>
-            <li><b>Running</b>: The Agent Event will continue to run until the end criteria is met.</li>
-            <li><b>Ending</b>: End criteria met.  Agent Event is wrapping up and will be destroyed once all Agents have quit.</li>
-          </ul>
-          The key to how Agent Events work is how every Agent in the Event can be assigned Role Types.  Role Types can completely
-          change an Agent's Drives and Actions.  A simple example of an Agent Event would be a Conversation between two Agents.
-          One Agent would create the Event and the second one would join.  Each Agent could then be assigned the same Role Type
-          which would cause them to only have one Drive, Social, and one Action, Converse.  They would then do this until the
-          Agent Event timed out or one of them quit.
+          Total AI included a basic UI to aid with testing and as a starting point for a real game UI.
         </p>
-        <h3>Agent Event Type</h3>
+
+        <h3>Relatime Placement System</h3>
         <hr>
         <p>
-          An Agent Event Type <b>defines the default configuration</b> for a Agent Event.  The following sections outline
-          the configuration options.
-        </p>
-        <h3>Timing</h3>
-        <hr>
-        <p>
-          Various options on waiting times and running time limits.  Also defines certain end event criteria.
-        </p>
-        <h3>Attendees</h3>
-        <hr>
-        <p>
-          Min and max number of attendees and a filter for min R level (R level of the creator to the attendee)
-          and if to only allow Faction members to join.
-        </p>
-        <h3>Sound</h3>
-        <hr>
-        <p>
-          Select a sound to play while waiting and if it should be looped.
-        </p>
-        <h3>Role Types</h3>
-        <hr>
-        <p>
-          An Agent Event Type <b>defines the default configuration</b> for a Agent Event.
+          Total AI's UI includes the ability to place Entities into the scene while playing.
         </p>
       </div>
       <div class="col-md-3">

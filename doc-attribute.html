@@ -55,12 +55,12 @@
       </ul>
     </nav>
      
-    <main>
+    <main style="width: 100%">
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
         <div class="col-md-3 col-xl-2" style="position: sticky; top: 0; z-index: 1000; height: calc(100vh - 4rem); order: 0; overflow-y: auto; padding-top: 10px; padding-bottom: 40px;">
           <h3 class="nav-header">Getting Started</h3>
-          <ul class="nav flex-column navbar-light">
+          <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="doc-introduction.html">Introduction</a>
             </li>
@@ -71,19 +71,6 @@
               <a class="nav-link" href="doc-demo.html">Demo Worlds</a>
             </li>
           </ul>
-          
-          <h3 class="nav-header">Type System</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-base-types.html">InputOutputTypes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-entity-types.html">EntityTypes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-level-types.html">LevelTypes</a>              
-            </li>
-          </ul>
           <h3 class="nav-header">Entities</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
@@ -92,12 +79,8 @@
             <li class="nav-item">
               <a class="nav-link" href="doc-worldobject.html">WorldObject</a>
             </li>
-            
             <li class="nav-item">
               <a class="nav-link" href="doc-agentevent.html">AgentEvent</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-inventory.html">Inventory</a>
             </li>
           </ul>
           <h3 class="nav-header">Levels</h3>
@@ -117,31 +100,59 @@
             <li class="nav-item">
               <a class="nav-link" href="doc-role.html">Role</a>
             </li>
-            
-          </ul>
           <h3 class="nav-header">Agent</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
-              <a class="nav-link" href="doc-base-types.html">Main Loop</a>
+              <a class="nav-link" href="doc-agent-main-loop.html">Main Loop</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-sensor.html">Sensors</a>
+              <a class="nav-link" href="doc-movementtype.html">Movement Type</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-memory.html">Memory</a>
+              <a class="nav-link" href="doc-animationtype.html">Animation Type</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-plans.html">Plans</a>
+              <a class="nav-link" href="doc-sensortype.html">Sensor Type</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-memorytype.html">Memory Type</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="doc-decider.html">Decider</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="doc-plannertype.html">Planner Type</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-mapping.html">Plans & Mappings</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="doc-behavior.html">Behavior</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-historytype.html">History Type</a>
+            </li>
           </ul>
-          <h3 class="nav-header">Key Concepts</h3>
+          <h3 class="nav-header">AI Types</h3>
           <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-fsm.html">FSM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-goap.html">GOAP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-utility-ai.html">Utility AI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doc-deep-rl.html">Deep RL</a>
+            </li>
+          </ul>
+          <h3 class="nav-header">Other</h3>
+          <ul class="nav flex-column navbar-light">
+            <li class="nav-item">
+              <a class="nav-link" href="doc-inventory.html">Inventory</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="doc-design-principles.html">Design Principles</a>
             </li>
@@ -155,70 +166,10 @@
               <a class="nav-link" href="doc-utility-function.html">Utility Function</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-plannertype.html">Planner Types</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Editors</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-custom-inspectors.html">Custom Inspectors</a>
+              <a class="nav-link" href="doc-included-ui.html">UI & Placement</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-main-editor-window.html">Main Window</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-history-window.html">History Window</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-planner-window.html">Planner Window</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Included Types</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-core-types.html">Core Types</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-demo-types.html">Demo Types</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">How Tos</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-create-types.html">Create Types</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-create-entities.html">Create Entities</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Basic UI/Placement</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-included-ui.html">Included UI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-placememnt.html">Placement</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">3rd Party Integrations</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-behavior-designer.html">Behavior Designer</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-astar-planning.html">A* Planning</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">API Documentation</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-api.html">Types</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">More Resources</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-more-resources.html">Links</a>
+              <a class="nav-link" href="doc-more-resources.html">External Links</a>
             </li>
           </ul>
         </div>

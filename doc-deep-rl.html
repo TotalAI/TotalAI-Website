@@ -80,7 +80,7 @@
               <a class="nav-link" href="doc-worldobject.html">WorldObject</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="doc-agentevent.html">AgentEvent</a>
+              <a class="nav-link" href="doc-agentevent.html">AgentEvent</a>
             </li>
           </ul>
           <h3 class="nav-header">Levels</h3>
@@ -145,7 +145,7 @@
               <a class="nav-link" href="doc-utility-ai.html">Utility AI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-deep-rl.html">Deep RL</a>
+              <a class="nav-link active" href="doc-deep-rl.html">Deep RL</a>
             </li>
           </ul>
           <h3 class="nav-header">Other</h3>
@@ -177,52 +177,55 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1>Agent Event</h1>
+        <h1>Deep Reinforcement Learning</h1>
         
-        <h3>What is an Agent Event?</h3>
+        <h3>What is Deep RL?</h3>
         <hr>
         <p>
-          An Agent Event allows for coordinated mult-agent events to occur.  Every Agent Event has to have an Agent creator and
-          other Agents called attendees.  An Agent Event has the following life cycle:
-          <ul>
-            <li><b>Waiting</b>: Starts in this state after creation.  Stays here until enough agents have joined or it times out.</li>
-            <li><b>Starting</b>: Enough Agents have joined.  The Event is now Starting.</li>
-            <li><b>Running</b>: The Agent Event will continue to run until the end criteria is met.</li>
-            <li><b>Ending</b>: End criteria met.  Agent Event is wrapping up and will be destroyed once all Agents have quit.</li>
-          </ul>
-          The key to how Agent Events work is how every Agent in the Event can be assigned Role Types.  Role Types can completely
-          change an Agent's Drives and Actions.  A simple example of an Agent Event would be a Conversation between two Agents.
-          One Agent would create the Event and the second one would join.  Each Agent could then be assigned the same Role Type
-          which would cause them to only have one Drive, Social, and one Action, Converse.  They would then do this until the
-          Agent Event timed out or one of them quit.
+          GOAP is a <b>planning architecture</b> created by
+          <a class="text-link" target="_blank" href="http://alumni.media.mit.edu/~jorkin/goap.html">Jeff Orkin</a>
+          at the MIT Media Lab.  It is a simplified STRIPS-like planning architecture.  STRIPS was invented (along with A* Planning)
+          at SRI in the early 70s.  For more information on the history of STRIPS and A* check out
+          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=mQ7M-zhiu7U"> this video</a> by Nils Nilsson.
+          <br><br>
+          The three key concepts in GOAP are <b>Actions, Preconditions, and Effects</b>.  An Action can only be performed if
+          all of its Preconditions are met.  Effects are the changes that occur from the Action being performed.  In TAI
+          Actions are Mappings, Preconditions are InputConditions, and Effects are OutputChanges.
+          <br><br>
+          The other key concept in GOAP is that planning <b>starts with a Goal and plans backwards</b> until it finds a plan the
+          Agent can perform.  Actions can chain together as an Effect can cause a Precondition to become satisfied.
+          In TAI Goals are to reduce the highest priority Drive Level and Mappings can chain together to create Plan Trees.
         </p>
-        <h3>Agent Event Type</h3>
+
+        <h3>Total AI's Deep RL System</h3>
         <hr>
         <p>
-          An Agent Event Type <b>defines the default configuration</b> for a Agent Event.  The following sections outline
-          the configuration options.
+          TAI comes with a GOAP-like planning system which is easy to add to any agent.  It relies on Mappings
+          to create planning trees where a childs's Output Change can link to a parents's failed Input Condition.
+          It's easiest to understand with an example:
+          <br><br>
+          <i>Attach photo of Plan Tree</i>
+          <br><br>
+          Describe example.
         </p>
-        <h3>Timing</h3>
+        <h3>GOAP Planner Manager Component</h3>
         <hr>
         <p>
-          Various options on waiting times and running time limits.  Also defines certain end event criteria.
+          The GOAP Planner Manager component should be attached to an empty GameObject in any scene where at least one
+          agent is using TAI's GOAP-like System.  The planner manager contains all of the logic for generating plan trees and 
+          also caches information on which Input Conditions are fixed by which Output Changes in order to increase planning
+          perforance.
         </p>
-        <h3>Attendees</h3>
+        <h3>How does GOAP Planner Manager Work?</h3>
         <hr>
         <p>
-          Min and max number of attendees and a filter for min R level (R level of the creator to the attendee)
-          and if to only allow Faction members to join.
+          The GOAP Planner Manager contains all of the complicated code for generating Plans.  The key methods are:
         </p>
-        <h3>Sound</h3>
-        <hr>
-        <p>
-          Select a sound to play while waiting and if it should be looped.
-        </p>
-        <h3>Role Types</h3>
-        <hr>
-        <p>
-          An Agent Event Type <b>defines the default configuration</b> for a Agent Event.
-        </p>
+        <ul>          
+          <li>CreatePlanTrees: </li>
+          <li>Choices: </li>
+          <li>SelectEntities: </li>
+        </ul>
       </div>
       <div class="col-md-3">
 
