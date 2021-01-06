@@ -162,7 +162,7 @@
               <a class="nav-link" href="doc-utility-curve.html">Utility Curve</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-utility-function.html">Utility Function</a>
+              <a class="nav-link" href="doc-utility-function.html">Utility Function Type</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="doc-included-ui.html">UI & Placement</a>
@@ -215,9 +215,8 @@
         <hr>
         <p>
           Creating a usable AI Framework for Unity is a challenging task due to the incredible variety of games.  TAI tries to
-          provide a fully featured framework for a large chunk of these games by making it easy to use some features and not others.
-          <br><br>
-          Talk about how it handles integrating with various Movement/Animation systems.
+          provide a fully featured framework for a large chunk of these games by creating a general AI framework that a user
+          can easily plug in different logic.  TAI also makes it easy to use some features and not others.
         </p>
         <h3>Customizable</h3>
         <hr>
@@ -229,8 +228,13 @@
         <h3>Performant</h3>
         <hr>
         <p>
-          TAI uses two main pathways for performance.  One is in the core code using the latest in Unity performance technology
-          such as the Jobs System and is received for free.  The second one is design options for reducing and redirecting
+          TAI uses two main pathways for performance.
+          <br><br>
+          One is in the core code using the latest in Unity performance technology such as the Jobs System and
+          is received for free.  <b>TAI currently does NOT use the Jobs System.</b>  This is currently an area
+          in need of improvement for Total AI.
+          <br><br>
+          The second one is design options for reducing and redirecting
           available computation to the areas of your game that need it.  This one is more powerful but takes careful design
           by the game designer.  TAI provides many options here and the documentation tries to aid game designers with how to
           get the most out of their available AI compute.

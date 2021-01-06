@@ -164,7 +164,7 @@
               <a class="nav-link" href="doc-utility-curve.html">Utility Curve</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="doc-utility-function.html">Utility Function</a>
+              <a class="nav-link active" href="doc-utility-function.html">Utility Function Type</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="doc-included-ui.html">UI & Placement</a>
@@ -178,27 +178,28 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1>Utility Function</h1>
+        <h1>Utility Function Type</h1>
         
-        <h3>What is a Utility Function?</h3>
+        <h3>What is a Utility Function Type?</h3>
         <hr>
         <p>
-          In TAI the Utility Function is used to evaluate different Plan Trees.  Each Plan Tree is given a float score.
+          In TAI the Utility Function Type is used to evaluate different Plan Trees.  Each Plan Tree is given a float score.
           The Decider Type can then use this information to aid in choosing which Plan to run.
           <br><br>
-          Utility Functions follows the familiar TAI ScriptableObject pattern of having a base class inherit from ScriptableObject.
-          Custom logic can be easily achieved though a new class that inherits from the UtilityFunction bas class and
+          Utility Function Types follows the familiar TAI ScriptableObject pattern of having a base class inherit from ScriptableObject.
+          Custom logic can be easily achieved though a new class that inherits from the Utility Function Type base class and
           overrides its Evaluate method.
         </p>
-        <h3>Included Utility Function</h3>
+        <h3>Included Utility Function Types</h3>
         <hr>
         <p>
-          The base Utility Function class provides a few key ratios for determining how much weight side effects should be given
+          The base Utility Function Type class provides a few key ratios for determining how much weight side effects should be given
           versus the main Drive Level rate decrease.  Side effects are any changes that occur that are not changes to the main
           DriveType changes.  Drive Level rate is the total decrease to the main DriveType Level divided by the estimated time
           to complete the plan.
           <br><br>
-          <i>What is the equation?  Define how SEs and time to complete plan are calculated.</i>
+          There is also a UtilityAIUTF provided which entirely uses Utility Modifiers to calculate the Utility of a Mapping.
+          This should be used with the UtilityAIDT.  (Utility AI Decider Type)
         </p>
       </div>
       <div class="col-md-3">
