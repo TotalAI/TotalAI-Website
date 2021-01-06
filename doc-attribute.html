@@ -186,10 +186,10 @@
           is a bit more complicated than the other levels since an Attribute can be made to accept any type of 
           value.  For example, an Attribute could be an InventorySlot out of a choice of InventorySlots or a float
           level between a min and a max.  It is common for Attributes to have either choices or ranges since they
-          can then be used with Selectors to dynamically choose a value for the Mapping.
+          can then be used with Selectors to dynamically choose a value based on runtime logic.
           <br><br>
           Attributes are used in many locations.  They are used in Sensor Types, Target Factors, Selectors,
-          Output Changes, and BehaviorTypes.
+          Output Changes, and Behavior Types.
           <br><br>
           A couple of examples will make Attributes more concrete.  The two most common Attributes are MovementSpeedAT
           and DetectionRadiusAT.  MovementSpeedAT is a range Attribute which represents the min and max speed of the Agent.
@@ -201,6 +201,10 @@
         <h3>Attribute Type</h3>
         <hr>
         <p>
+          <a class="text-link" href="insp-attributetype.html">Inspector Reference</a>
+          <br>
+          <a class="text-link" href="script-attributetype.html">Script Reference</a>
+          <br><br>
           Unlike other Level Types Attribute Type is an abstract class.  It must be implemented by another class which will
           specify the Type of values the Attribute Type uses.  For example the most common Attribute Type is MinMaxFloatAT.
           This inherits from Attribute Type is is for a ranged float value.  The other common Attibute Type is the EnumAT.
@@ -208,14 +212,7 @@
           Enum is in the class that inherits from it.  For example EnumStringAT inherits from EnumAT and defines its
           Enum type to be a string.
         </p>
-        <h3>How to Create a Custom Attribute Type</h3>
-        <hr>
-        <p>
-          Total AI provides a few basic types but it is easy to create your own custom type.  For example say you had your
-          own Type called "MyClass".  I think it has to inherit from UnityEngine.Object?
-          <br><br>
-          <i>Finish this example</i>
-        </p>
+        
       </div>
       <div class="col-md-3">
 

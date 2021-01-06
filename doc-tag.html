@@ -182,6 +182,10 @@
         <h3>What is Tag and Tag Type?</h3>
         <hr>
         <p>
+          <a class="text-link" href="insp-tagtype.html">Inspector Reference</a>
+          <br>
+          <a class="text-link" href="script-tagtype.html">Script Reference</a>
+          <br><br>
           A Tag Type is used in Mapping Types to add specific Tags to Entities.  There is an Entity Relation field so that the 
           tag can be related to another Entity.  These are best explained with examples.  One common use is to tag an Owner
           Tag Type to an Entity with the EntityRelation pointing to the Agent Owner.  Then ICTs can be used to only allow
@@ -190,14 +194,14 @@
           multiple of the same Tag Types so an Agent could have multiple Parent tags if they have multiple children.
           <br><br>
           A Tag Type is a Level Type so it does have a float value.  This is usually ignored by most tags but can be used
-          if the specific TagType has an associated float value.
+          if the specific Tag Type has an associated float value.
         </p>
-        <h3>Tag Type ICTs and OCTs</h3>
+        <h3>Included Tag Type ICTs and OCTs</h3>
         <hr>
         <ul>
-          <li><b>HasTagICT</b>: </li>
-          <li><b>AddTagOCT</b>: </li>
-          <li><b>RemoveTagOCT</b>: </li>
+          <li><b>HasTagICT</b>: Various tests for tags being on or not on Entities.</li>
+          <li><b>AddTagOCT</b>: Add a Tag Type to an Entity.</li>
+          <li><b>RemoveTagOCT</b>: Removes a Tag Type from an Entity.</li>
         </ul>
       </div>
       <div class="col-md-3">

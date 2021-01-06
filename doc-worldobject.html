@@ -185,13 +185,17 @@
         <p>
           A World Object is an Entity that exists in the World but can't make decisions or act. World Object derives
           from MonoBehavior so it is a component that is attached to a Game Object.  A World Object can have <b>inventory,
-          states, and can be built or grows</b>.
+          states, various appearances, and can be built or grow</b>.
         </p>
         <h3>World Object Type</h3>
         <hr>
         <p>
           An World Object Type <b>defines the default configuration</b> for a World Object.  It also defines what Mapping Types
           a World Object of World Object Type can be part of.
+          <br><br>
+          <a class="text-link" href="insp-worldobjecttype.html">Inspector Reference</a>
+          <br>
+          <a class="text-link" href="script-worldobjecttype.html">Script Reference</a>
         </p>
         <h3>Inventory</h3>
         <hr>
@@ -228,18 +232,20 @@
            World Objects can also exist in various states.  The most common example would be a Door being either "Open" or
            "Closed".  Through Mapping Types an Agent can change the World Object's state.  States can also automatically change
            over a period of time.
+           When a World Object enters or exits a State it can have exit or enter
+           <a class="text-link" href="insp-outputchange.html" >Output Changes</a> run.
         </p>
         <h3>Skin Prefabs</h3>
         <hr>
         <p>
-           Skin prefabs determine what the World Object will look like based on Completion Points, Damage Points,
+           Skin prefabs determine the appearance of the World Object based on Completion Points, Damage Points,
            current State, and Inventory Slot Conditions.  Inventory Slot Conditions allow for the World Object to
            change how it looks based on its inventory.
            <br><br>
-           The change of looks is accomplished by have an empty GameObject containing the model under it.  The World
+           The change of appearance is accomplished by having an empty GameObject containing the model under it.  The World
            Object will then switch out everything under the empty GameObject when the skin prefab changes.  The name
            of this empty GameObject is specified in the Skin Game Object Name field.  The order of the skin prefabs
-           does matter as it will pick the first one where all of the conditions pass.
+           does matter as it will pick the first skin prefab where all of the conditions pass.
         </p>
         <h3>Inventory Recipes</h3>
         <hr>

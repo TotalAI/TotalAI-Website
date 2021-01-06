@@ -192,24 +192,74 @@
           Here are the current possible repos:
         </p>
         <ul>
-          <li><b>Core</b>: Only Total AI's core scripts.  No demo scripts or assets.</li>
-          <li><b>3D Primitives Demo</b>: Full project setup with a primitive Demo Worlds for 3D.</li>
-          <li><b>2D Primitives Demo</b>: Full project setup with a primitive Demo Worlds for top down 2D.</li>
+          <li><b>Core</b>: 
+            <a class="text-link" target="_blank" href="https://github.com/TotalAI/TotalAI">
+              TotalAI Repo on GitHub
+              <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+            </a>
+            <br>
+            Only Total AI's core scripts.  No demo scripts or assets.</li>
+          <li><b>3D Primitives Demo</b>:
+            <a class="text-link" target="_blank" href="https://github.com/TotalAI/TotalAI-3D-Demo">
+              3D Demo Repo on GitHub
+              <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+            </a>
+            <br>
+            Full project setup with a primitive Demo Worlds for 3D.</li>
+          <li><b>2D Primitives Demo</b>:
+            <a class="text-link" target="_blank" href="https://github.com/TotalAI/TotalAI-2D-Demo">
+              2D Demo Repo on GitHub
+              <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+            </a>
+            <br>
+            Full project setup with a primitive Demo Worlds for top down 2D.</li>
         </ul>
         <h3>Setup</h3>
         <hr>
         <p>
-          TAI Core ships with a Setup Editor Window.  This window provides easy Setup along with some other project-wide settings
-          and info.  The following are the main items the Setup will create for you along with why they are required/recommened:
+          TAI Core includes a Setup Editor Window.  This can be opened by going to:
+          <br><br>
+          <b>Tools -> Total AI -> Setup Window</b>
+          <br><br>
+          This window provides quick setup, TAI Scene Settings, and current IC to MT/OC matches in the project.
         </p>
+        <img src="images/SetupWindow.png">
+        <br><br>
         <ul>
-          <li><b>Layers</b>: Every Entity (Agent, WorldObject, AgentEvent) has its own layer for SensorTypes to detect
-            Entities using Unity's Raycast.  Also a Ground layer is used for dropping inventory.</li>
-          <li><b>TotalAIManager</b>: Single Manager for TAI to mostly handle Type System along with Dictionaries for performance.</li>
-          <li><b>TimeManager</b>: Simple Time System for time of day based drives.</li>
+          <li><b>TotalAIManager</b>: Single Manager for TAI to mostly handle Type System along with Dictionaries for
+            performance.
+          </li>
+          <li><b>TotalAISettings</b>: Provides Scene wide settings for TAI.  See below for details.
+          </li>
+          <li><b>TimeManager</b>: Simple Time System for time of day based drives and for specifying times in game
+            minutes or game hours.
+          </li>
           <li><b>GOAPPlannerManager</b>: Only needed if using the GOAPPlannerType.</li>
+          <li><b>Layers</b>: Every Entity (Agent, WorldObject, AgentEvent) has its own layer for SensorTypes to detect
+            Entities using Unity's Raycast.  Also a Ground layer is used for dropping inventory and an Inventory layer
+            for any Entity that is currently in another Entity's inventory.
+          </li>
           <li><b>ScriptableObjects Directories</b>: Easily create the directory structure for all of TAIs 40+ SOs.</li>
+          <li><b>Prefabs Directories</b>: Generate directory for Agents, WorldObjects, AgentEvent Prefabs.</li>
+          <li><b>Core SOs</b>: Generate basic set of ScriptableObjects.</li>
         </ul>
+        
+        <img src="images/SetupSettingsWindow.png">
+        <br><br>
+        <p>
+          This TotalAISettings ScriptableObject will be automatically created by the Quick Setup.
+          <br><br>
+          See <a class="text-link" href="script-totalaisettings.html">TotalAISettings</a> for details on each field.
+        </p>
       </div>
       <div class="col-md-3">
 

@@ -191,10 +191,14 @@
         <h3>Drive Type</h3>
         <hr>
         <p>
+          <a class="text-link" href="insp-drivetype.html">Inspector Reference</a>
+          <br>
+          <a class="text-link" href="script-drivetype.html">Script Reference</a>
+          <br><br>
           The Drive Type defines how the Drive's level changes and also how the drive level equates to utility through its default
           <a class="text-link" href="doc-utility-curve.html">Utility Curve</a>.  The curve translates the 0-100 level to a 0-1
           utility value which can be compared to other drives' utility values.  The default Utility Curve can be overriden
-          by the AgentType.
+          by the Agent Type.
           <br><br>
           How a Drive Type's level changes is critical to the kind of Drive it is.  TAI provides three main ways to
           have Drive levels change: hourly rate, hourly rate based on time of day, and equation based.  A DriveType
@@ -205,21 +209,21 @@
         <hr>
         <p>
           This is the simpliest level change type.  The default change can be set in the Drive Type and then
-          each AgentType can override this default hourly rate.
+          each Agent Type can override this default hourly rate.
         </p>
         <h3>Hourly Rate Change By Time of Day</h3>
         <hr>
         <p>
           The time of day curve defines the rate of change based on the time of day.  The x value on the curve is the 
           normalized time of day, so Noon would be 0.5.  The y is between 0-1 which is then transformed into the min/max
-          range.  Sleep DriveType is a classic example of this one.  As it gets later and later at night the rate of sleep
+          range.  Sleep Drive Type is a good example of this.  As it gets later and later at night the rate of sleep
           Drive will keep increasing and then will not increase during the day.
         </p>
         <h3>Attribute Synced</h3>
         <hr>
         <p>
-          TAI allows you to mark a DriveType as synced between an AttributeType.  You can specify if the levels go in the
-          same direction or opposite directions.  The AttributeType must be of or derive from MinMaxFloatAT as the
+          TAI allows you to mark a Drive Type as synced between an Attribute Type.  You can specify if the levels go in the
+          same direction or opposite directions.  The Attribute Type must be of or derive from MinMaxFloatAT as the
           attribute has to be able to move between a min and a max.
         </p>
         <h3>Equation Based</h3>
@@ -228,7 +232,7 @@
           Equation based Drive Types allow you to attach the Level to the state of the World.  For example you could create
           a Drive Type that's level is based on the amount of food stored.  The equation would need a max amount of food
           at which point the level would be 0.  A min is also set at which point the Drive level is 100.
-          The Equation's a easy to write and use the Drive Type Equation class, which follows the Scriptable Object 
+          The Equation's logic is coded in a subclass of the DriveTypeEquation class, which follows the Scriptable Object 
           customizable logic pattern.
         </p>
         <h3>Drive Type Equation</h3>
