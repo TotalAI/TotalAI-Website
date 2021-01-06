@@ -178,54 +178,59 @@
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
         <h1>Deep Reinforcement Learning</h1>
-        
+        <div style="margin-top: 30px;" class="alert alert-danger" role="alert">
+          <b style="color: #222222 !important;">Deep RL is currently in planning/development and is NOT functional.</b>
+        </div>
         <h3>What is Deep RL?</h3>
         <hr>
         <p>
-          GOAP is a <b>planning architecture</b> created by
-          <a class="text-link" target="_blank" href="http://alumni.media.mit.edu/~jorkin/goap.html">Jeff Orkin</a>
-          at the MIT Media Lab.  It is a simplified STRIPS-like planning architecture.  STRIPS was invented (along with A* Planning)
-          at SRI in the early 70s.  For more information on the history of STRIPS and A* check out
-          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=mQ7M-zhiu7U"> this video</a> by Nils Nilsson.
+          Deep RL is currently in heavy research as a likely conidate for the future of AI.
+          It uses the same deep learning algorithms that have led
+          to huge gains in AI in the last decade plus and applies them to the field of Reinforcement Learning.
           <br><br>
-          The three key concepts in GOAP are <b>Actions, Preconditions, and Effects</b>.  An Action can only be performed if
-          all of its Preconditions are met.  Effects are the changes that occur from the Action being performed.  In TAI
-          Actions are Mappings, Preconditions are InputConditions, and Effects are OutputChanges.
-          <br><br>
-          The other key concept in GOAP is that planning <b>starts with a Goal and plans backwards</b> until it finds a plan the
-          Agent can perform.  Actions can chain together as an Effect can cause a Precondition to become satisfied.
-          In TAI Goals are to reduce the highest priority Drive Level and Mappings can chain together to create Plan Trees.
+          There is a huge amount of resources online now on Deep RL.  The 
+          <a class="text-link" target="_blank" href="http://incompleteideas.net/sutton/book/the-book-2nd.html">
+            Sutton and Barto Book
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
+          is excellent place to start
+          to learn core Reinforcement Learning concepts and the book is freely available online.
         </p>
 
-        <h3>Total AI's Deep RL System</h3>
+        <h3>Total AI's Planned Deep RL System</h3>
         <hr>
         <p>
-          TAI comes with a GOAP-like planning system which is easy to add to any agent.  It relies on Mappings
-          to create planning trees where a childs's Output Change can link to a parents's failed Input Condition.
-          It's easiest to understand with an example:
+          Unity has an amazing Open Source 
+          <a class="text-link" target="_blank" href="https://github.com/Unity-Technologies/ml-agents">
+            ml-agents project
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
+          which implements state-of-the-art Deep RL.  TAI's Deep RL will
+          tie into this system.  
           <br><br>
-          <i>Attach photo of Plan Tree</i>
+          The Planner Type will be similar to Utility AI is that it will just return all available Mappings with no chaining.
+          There will be one discrete branch of possible Actions.
+          The Deep RL Decider Type will then mask the Actions based on the ones that are available.
+          It will be responsible for sending the possible Actions and Observations to ml-agents.
+          The rewards will be customizable but will default to the amount of drive utility reduced.
           <br><br>
-          Describe example.
+          The eventual long term goal for Deep RL is to have Total AI's system automatically converted into a similar network
+          to the Network OpenAI created for their Dota2 Agents:
+          <br><br>
+          <a class="text-link" target="_blank" href="https://s3-us-west-2.amazonaws.com/openai-assets/dota_benchmark_results/network_diagram_08_06_2018.pdf">
+            OpenAI Dota2 Network Model
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
         </p>
-        <h3>GOAP Planner Manager Component</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager component should be attached to an empty GameObject in any scene where at least one
-          agent is using TAI's GOAP-like System.  The planner manager contains all of the logic for generating plan trees and 
-          also caches information on which Input Conditions are fixed by which Output Changes in order to increase planning
-          perforance.
-        </p>
-        <h3>How does GOAP Planner Manager Work?</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager contains all of the complicated code for generating Plans.  The key methods are:
-        </p>
-        <ul>          
-          <li>CreatePlanTrees: </li>
-          <li>Choices: </li>
-          <li>SelectEntities: </li>
-        </ul>
       </div>
       <div class="col-md-3">
 

@@ -182,50 +182,55 @@
         <h3>What is Utility AI?</h3>
         <hr>
         <p>
-          GOAP is a <b>planning architecture</b> created by
-          <a class="text-link" target="_blank" href="http://alumni.media.mit.edu/~jorkin/goap.html">Jeff Orkin</a>
-          at the MIT Media Lab.  It is a simplified STRIPS-like planning architecture.  STRIPS was invented (along with A* Planning)
-          at SRI in the early 70s.  For more information on the history of STRIPS and A* check out
-          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=mQ7M-zhiu7U"> this video</a> by Nils Nilsson.
+          Utility AI is a popular AI type for video games which uses factors to calculate an overall utility value for
+          every possible action.  The Action chosen is then based on either the highest utility or a weighted random selection
+          based on the relative utilities.
           <br><br>
-          The three key concepts in GOAP are <b>Actions, Preconditions, and Effects</b>.  An Action can only be performed if
-          all of its Preconditions are met.  Effects are the changes that occur from the Action being performed.  In TAI
-          Actions are Mappings, Preconditions are InputConditions, and Effects are OutputChanges.
-          <br><br>
-          The other key concept in GOAP is that planning <b>starts with a Goal and plans backwards</b> until it finds a plan the
-          Agent can perform.  Actions can chain together as an Effect can cause a Precondition to become satisfied.
-          In TAI Goals are to reduce the highest priority Drive Level and Mappings can chain together to create Plan Trees.
+          Dave Mark popularized Utility AI and has some excellent talks that go into great detail:
+          <ul>
+            <li>2010 GDC Talk by Kevin Dill and Dave Mark:<br>
+              <a class="text-link" target="_blank" href="https://gdcvault.com/play/1012410/Improving-AI-Decision-Modeling-Through">
+              Improving AI Decision Modeling Through Utility Theory.</a></li>
+            <li>2015 GDC Talk by Dave Mark and Mike Lewis:<br>
+                <a class="text-link" target="_blank" href="https://www.gdcvault.com/play/1021848/Building-a-Better-Centaur-AI">
+                Building a Better Centaur: AI at Massive Scale</a></li>
+          </ul>
         </p>
 
         <h3>Total AI's Utility AI System</h3>
         <hr>
         <p>
-          TAI comes with a GOAP-like planning system which is easy to add to any agent.  It relies on Mappings
-          to create planning trees where a childs's Output Change can link to a parents's failed Input Condition.
-          It's easiest to understand with an example:
-          <br><br>
-          <i>Attach photo of Plan Tree</i>
-          <br><br>
-          Describe example.
+         Total AI accomplishes a Utility AI system with four main parts:
+         <ul>
+            <li>
+              <b>UtilityAIPT</b>:
+              Generates the Plans for Utility AI.  These plans do not chain so they all consist of one Mapping.
+              It will return all possible Mapping Types that meet the Input Conditions.
+              Currently it uses the Mapping Types Target Factors to select the best Entity Target/Inventory Target.  A future feature
+              will allow all targets to be chosen as separate Plans, allowing the Utility Modifiers to also figure in
+              Targets.
+            </li>
+            <li>
+              <b>UtilityAIDT</b>:
+              The Decider Type should have UtilityAIPT set as its only Planner Type.  It also requires a "fake" Drive Type.
+              Create a "Default" Drive Type and set in in inspector.  This allows Utility AI to play nice with the rest of
+              Total AI.  The Drive Type can be ignored though and does not need to be reduced in Mapping Types.
+            </li>
+            <li>
+              <b>Mapping Type's Utility Modifiers</b>:
+              Generates a utility value based on the current state of the Agent and the World.  The logic is contained in its
+              Utility Modifier Type.  See <a href="insp-utilitymodifier.html">Utilty Modifier Inspector</a>.
+            </li>
+            <li>
+              <b>UtilityAIUFT</b>:
+              Combines each Mapping Type's Utility Modifiers into a weighted average utility value.  This can be modified
+              to handle more complex combination methods of Utility Modifiers.  UtilityAIDT calls this to get the Utility
+              value for each possible Mapping.
+            </li>
+
+          </ul>
         </p>
-        <h3>GOAP Planner Manager Component</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager component should be attached to an empty GameObject in any scene where at least one
-          agent is using TAI's GOAP-like System.  The planner manager contains all of the logic for generating plan trees and 
-          also caches information on which Input Conditions are fixed by which Output Changes in order to increase planning
-          perforance.
-        </p>
-        <h3>How does GOAP Planner Manager Work?</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager contains all of the complicated code for generating Plans.  The key methods are:
-        </p>
-        <ul>          
-          <li>CreatePlanTrees: </li>
-          <li>Choices: </li>
-          <li>SelectEntities: </li>
-        </ul>
+        
       </div>
       <div class="col-md-3">
 

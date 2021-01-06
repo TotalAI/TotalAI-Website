@@ -207,6 +207,8 @@
         <h3>Behavior Type</h3>
         <hr>
         <p>
+          <a class="text-link" href="script-behaviortype.html">Script Reference</a>
+          <br><br>
           All of the key logic in a Behavior is located in the BehaviorType.  The following functions must be implememented:
         </p>
         <pre><code class="csharp">
@@ -223,12 +225,13 @@
           BehaviorType accomplishes this through the BehaviorType's EditorHelp class.  The MappingType Custom Inspector
           uses the EditorHelp class to show the apprpriate fields for creating a Selector for a MinMaxFloatAT.
         </p>
-        <h3>BehaviorContext</h3>
+        <h3>Context</h3>
         <hr>
         <p>
           Since a Behavior Type is a Scriptable Object it can't retain state but many Behavior Types require state to be saved.
-          For example a simple WaitBT would need to remember the start time.  BehaviorContext allows this required
-          state to be saved and also allows each Behavior Type to define its own data.
+          For example a simple WaitBT would need to remember the start time.  The Context class allows this required
+          state to be saved and also allows each Behavior Type to define its own data.  It is saved by using a Dictionary
+          mapping Agent to Context.  (Dictionary&lt;Agent, Context&gt;)
         </p>
         <h3>Integration with 3rd Party: Behavior Designer</h3>
         <hr>

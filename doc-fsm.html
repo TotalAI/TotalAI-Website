@@ -182,50 +182,25 @@
         <h3>What is a Finite State Machine?</h3>
         <hr>
         <p>
-          GOAP is a <b>planning architecture</b> created by
-          <a class="text-link" target="_blank" href="http://alumni.media.mit.edu/~jorkin/goap.html">Jeff Orkin</a>
-          at the MIT Media Lab.  It is a simplified STRIPS-like planning architecture.  STRIPS was invented (along with A* Planning)
-          at SRI in the early 70s.  For more information on the history of STRIPS and A* check out
-          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=mQ7M-zhiu7U"> this video</a> by Nils Nilsson.
-          <br><br>
-          The three key concepts in GOAP are <b>Actions, Preconditions, and Effects</b>.  An Action can only be performed if
-          all of its Preconditions are met.  Effects are the changes that occur from the Action being performed.  In TAI
-          Actions are Mappings, Preconditions are InputConditions, and Effects are OutputChanges.
-          <br><br>
-          The other key concept in GOAP is that planning <b>starts with a Goal and plans backwards</b> until it finds a plan the
-          Agent can perform.  Actions can chain together as an Effect can cause a Precondition to become satisfied.
-          In TAI Goals are to reduce the highest priority Drive Level and Mappings can chain together to create Plan Trees.
+          An FSM is an AI system which consists of states and transitions.  An Agent is in a state and then checks to see
+          if they should transistion to any other states.
         </p>
-
-        <h3>Total AI's Finite State Machine System</h3>
+        <h3>Total AI's FSM System</h3>
         <hr>
         <p>
-          TAI comes with a Finite State Machine planning system which is easy to add to any agent.  It relies on Mappings
-          to create planning trees where a childs's Output Change can link to a parents's failed Input Condition.
-          It's easiest to understand with an example:
+          In TAI an Action is the State and a transition simply occurs when a Mapping Types ICs all pass.
           <br><br>
-          <i>Attach photo of Plan Tree</i>
+          TAI comes with a Finite State Machine planning system which is easy to add to any agent.  It uses the BaseDT
+          (same one GOAP uses) and the <b>FiniteStateMachinePT</b>.  There is no Mapping chaining is this Planner, so all
+          Plans consist of one Mapping.
           <br><br>
-          Describe example.
+          The FiniteStateMachinePT requires a CurrentActionTypeICT to be set on it in its inspector.  This is the key ICT
+          for telling the system to check the Agent's current state (Action).  The Mapping Types should use this ICT to
+          only allow certain state transitions.
+          <br><br>
+          The other features of TAI, such as Drive Type and Utility considerations, can still be used so its easy
+          to add functionality to an FSM based AI.
         </p>
-        <h3>GOAP Planner Manager Component</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager component should be attached to an empty GameObject in any scene where at least one
-          agent is using TAI's GOAP-like System.  The planner manager contains all of the logic for generating plan trees and 
-          also caches information on which Input Conditions are fixed by which Output Changes in order to increase planning
-          perforance.
-        </p>
-        <h3>How does GOAP Planner Manager Work?</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager contains all of the complicated code for generating Plans.  The key methods are:
-        </p>
-        <ul>          
-          <li>CreatePlanTrees: </li>
-          <li>Choices: </li>
-          <li>SelectEntities: </li>
-        </ul>
       </div>
       <div class="col-md-3">
 

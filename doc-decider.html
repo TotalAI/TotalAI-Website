@@ -183,25 +183,51 @@
         <h3>What is a Decider?</h3>
         <hr>
         <p>
-          A Decider handles all of the important decision making for an Agent.
+          A Decider handles all of the important decision making for an Agent.  Specifically around
+          when to plan and when to interrupt.  It uses the Agent's Decider Type to handle all of the key
+          logic.  The Run method is the main entry point and is called every X + Random(Y) seconds by an Agent. 
         </p>
+        <div style="overflow:hidden; padding-bottom: 15px; margin-right: -200px;">
+          <a target="_blank" href="images/AgentFlow.png">
+            <img src="images/AgentFlow.png" width="100%">
+          </a>
+          <br>
+          <i>Click on the diagram for full size.</i>
+        </div>
 
-        <h3>What is a DeciderType?</h3>
+        <h3>What is a Decider Type?</h3>
         <hr>
         <p>
-          A DeciderType contains all of the key logic needed by the Decider.  The DeciderType inherits from ScriptableObject (SO)
-          and is a base class for DeciderTypes that can be added to an AgentType.  For example, GOAPDeciderType inherits
-          from DeciderType and overrides many of the DeciderType methods to implement a GOAP-like decision process.  There is
-          usually only one SO asset for each DeciderType subclass unless your DeciderType has member variables.  For more
+          <a class="text-link" href="script-decidertype.html">Script Reference</a>
+          <br><br>
+          A Decider Type contains all of the key logic needed by the Decider.  The Decider Type inherits from ScriptableObject (SO)
+          and is a base class for Decider Types that can be added to an Agent Type.  For example, UtilityAIDT inherits
+          from Decider Type and overrides many of the Decider Type methods to implement a Utility AI decision process.  There is
+          usually only one SO asset for each Decider Type subclass unless your Decider Type has member variables.  For more
           information on this pattern see the section on how Total AI uses
           <a class="text-link" href="doc-scriptableobjects.html">ScriptableObjects for Logic Customization</a>.
         </p>
-        <h3>DeciderType Methods</h3>
+        <h3>Planner Types</h3>
+        <hr>
+        <p>
+          A Decider Type can have 0 to many Planner Types.  It is up to the Decider Type to use these Planner Types to
+          actually generate the Plans that it will then use to decide which Plan to run.  It is most common for a Decider Type
+          to have one Planner Type.
+        </p>
+        <h3>Decider Type Methods</h3>
         <hr>
         <p style="margin-right: -300px;">
+          <pre style="margin-right: -300px;"><code class="csharp">
+  public virtual Dictionary&lt;DriveType, Plans&gt; GetPlans(
+    Agent agent,
+    Dictionary<DriveType, float> currentDriveTypesRanked,
+    Plans previousPlans,
+    int previousPlansIndex,
+    bool previouslyInterrupted,
+    out DriveType currentDriveType)
+          </code></pre>
+          sdfsfsdf
           <pre style="margin-right: -300px;"><code>
-  // These methods shown in the Flow Diagram
-  public virtual Dictionary<DriveType, Plans> GetPlans(Agent agent, Dictionary<DriveType, float> currentDriveTypesRanked, Plans previousPlans, int previousPlansIndex, bool previouslyInterrupted, out DriveType currentDriveType);
   public virtual bool ShouldInterrupt(Agent agent, Mapping currentMapping, float currentPlanUtility, float lastReplanTime, out float newReplanTime)
   public virtual bool ShouldPlan(Mapping currentMapping)
   public virtual int ChooseNewPlan(Agent agent, Mapping currentMapping, DriveType newDriveType, Dictionary<DriveType, Plans> newPlans, out DriveType selectedDriveType, out Mapping newMapping, out float bestUtility)
@@ -216,7 +242,7 @@
   public virtual Mapping MaybeAddGoToMapping(Mapping mapping)
   public virtual bool RunOutputChanges(Agent agent, Mapping mapping, OutputChange.Timing timing, Dictionary<OutputChange, float> lastUpdateTimes = null)
   public virtual Dictionary<DriveType, float> RankDrives(Dictionary<DriveType, Drive> drives)
-            </code></pre>
+          </code></pre>
         </p>
       </div>
       <div class="col-md-3">

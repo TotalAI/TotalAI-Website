@@ -183,10 +183,23 @@
         <hr>
         <p>
           GOAP is a <b>planning architecture</b> created by
-          <a class="text-link" target="_blank" href="http://alumni.media.mit.edu/~jorkin/goap.html">Jeff Orkin</a>
+          <a class="text-link" target="_blank" href="http://alumni.media.mit.edu/~jorkin/goap.html">
+            Jeff Orkin
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
           at the MIT Media Lab.  It is a simplified STRIPS-like planning architecture.  STRIPS was invented (along with A* Planning)
           at SRI in the early 70s.  For more information on the history of STRIPS and A* check out
-          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=mQ7M-zhiu7U"> this video</a> by Nils Nilsson.
+          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=mQ7M-zhiu7U">
+            this video
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
+          by Nils Nilsson.
           <br><br>
           The three key concepts in GOAP are <b>Actions, Preconditions, and Effects</b>.  An Action can only be performed if
           all of its Preconditions are met.  Effects are the changes that occur from the Action being performed.  In TAI
@@ -195,6 +208,10 @@
           The other key concept in GOAP is that planning <b>starts with a Goal and plans backwards</b> until it finds a plan the
           Agent can perform.  Actions can chain together as an Effect can cause a Precondition to become satisfied.
           In TAI Goals are to reduce the highest priority Drive Level and Mappings can chain together to create Plan Trees.
+          <br><br>
+          For more info check out this great talk on GOAP:<br>
+          <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=gm7K68663rA">
+            Goal-Oriented Action Planning: Ten Years of AI Programming</a>
         </p>
 
         <h3>Total AI's GOAP-like System</h3>
@@ -202,11 +219,10 @@
         <p>
           TAI comes with a GOAP-like planning system which is easy to add to any agent.  It relies on Mappings
           to create planning trees where a childs's Output Change can link to a parents's failed Input Condition.
-          It's easiest to understand with an example:
           <br><br>
-          <i>Attach photo of Plan Tree</i>
-          <br><br>
-          Describe example.
+          It uses the BaseDT which should have the GOAPPT set as it's one and only one Planner Type.  In GOAPPT
+          you can set the max levels of chaining.  This defaults to 5 and should be kept low for perforance reasons.
+          Most plans are 2-3 levels deep but will depend on Mapping Type design.
         </p>
         <h3>GOAP Planner Manager Component</h3>
         <hr>
@@ -216,16 +232,6 @@
           also caches information on which Input Conditions are fixed by which Output Changes in order to increase planning
           perforance.
         </p>
-        <h3>How does GOAP Planner Manager Work?</h3>
-        <hr>
-        <p>
-          The GOAP Planner Manager contains all of the complicated code for generating Plans.  The key methods are:
-        </p>
-        <ul>          
-          <li>CreatePlanTrees: </li>
-          <li>Choices: </li>
-          <li>SelectEntities: </li>
-        </ul>
       </div>
       <div class="col-md-3">
 

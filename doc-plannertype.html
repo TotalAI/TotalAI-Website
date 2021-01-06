@@ -178,18 +178,23 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1>PlannerType</h1>
+        <h1>Planner Type</h1>
         
-        <h3>What is a PlannerType?</h3>
+        <h3>What is a Planner Type?</h3>
         <hr>
         <p>
-          PlannerType follows TAIs common pattern of
+          <a class="text-link" href="script-memorytype.html">Script Reference</a>
+          <br><br>
+          A Planner Type is responsible for producing Plans that reduce a Drive Type.  It is attached to a Decider Type.
+          The Decider Type is then responsible for selecting a plan to run.
+          <br><br>
+          Planner Type follows TAIs common pattern of
           <a class="text-link" href="doc-scriptableobjects.html">ScriptableObject Logic Customization</a>.
-          PlannerType is the abstract base class and its subclasses can be set as one of the DeciderType's PlannerTypes.
-          For example, GOAPPlannerType inherits from PlannerType and overrides the two abstract PlannerType methods to implement a
+          Planner Type is the abstract base class and its subclasses can be set as one of the DeciderType's PlannerTypes.
+          For example, GOAPPlannerType inherits from PlannerType and overrides the two abstract Planner Type methods to implement a
           GOAP-like planning process.  GOAPPlannerType is selected as the GOAPDeciderType's only PlannerType.
         </p>
-        <h3>PlannerType Methods</h3>
+        <h3>Planner Type Methods</h3>
         <hr>
         
           <pre><code>

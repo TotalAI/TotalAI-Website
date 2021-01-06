@@ -206,9 +206,9 @@
           The Decider's main method is Run which handles the high level logic flow for the following:
         </p>
         <ul>
-          <li>When to Interrupt a currently running Mapping.</li>
-          <li>When to GetPlans from the PlannerType.</li>
-          <li>If a Plan is running and the Decider asked for new Plans, should switch Plans.</li>
+          <li>When to Interrupt a currently running Mapping?</li>
+          <li>When to GetPlans from the PlannerType?</li>
+          <li>If a Plan is running and the Decider asked for new Plans, should Agent switch Plans?</li>
           <li>Choosing which Plan to run.</li>
           <li>Starting a Plan.</li>
           <li>Starting a Mapping.</li>
@@ -233,7 +233,7 @@
         <hr>
         <p>
           It is key to be able to interrupt any Mapping at anytime during the Behavior.  The Interrupt Logic allows this
-          and provides was to cleanly interrupt Behaviors from either in the BehaviorType or from the Decider.  Any other
+          and provides ways to cleanly interrupt Behaviors from either in the BehaviorType or from the Decider.  Any other
           part of TAI would use the Decider Interrupt.  For example, if an Agent is killed it needs to interrupt its
           Behavior by calling its Decider's Interrupt method and then run the die logic.  Since interrupts can come from
           two sources and both need to know about it, there is logic to inform the other system about the interrupt.

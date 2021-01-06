@@ -183,10 +183,15 @@
         <h3>What is Movement Type?</h3>
         <hr>
         <p>
+          <a class="text-link" href="script-movementtype.html">Script Reference</a>
+          <br><br>
           Every Agent has to have one Movement Type.  This is called mostly in Behavior Types but could also be called in
           Output Changes to actually move the Agent.  This wraps all of the Nav Mesh code so that Total AI is 
           agnostic to the choosen Nav Mesh system.  Of course it is possible to write one without a Nav Mesh system if your
           Agent's don't require one.
+          <br><br>
+          Movement Type can contain animations if they are central to moving the Agent around the scene.  Animation Type
+          handles any animations that do not specifically move the Agent to locations.
           <br><br>
           It is common to have a Movement Type require a Component to be attached to the same GameObject.  The component
           actually does the moving as it has access to the MonoBehavior's callbacks.  The included Movement Types
@@ -217,14 +222,21 @@
         <h3>Root Motion Component</h3>
         <hr>
         <p>
-          UnityNavMesh3DMT requires the RootMotionComponent to be attached to the Agent GameObject is Uses Root Motion
+          UnityNavMesh3DMT requires the RootMotionComponent to be attached to the Agent GameObject if Uses Root Motion
           is selected.
         </p>
         <h3>Non-Root Motion Component</h3>
         <hr>
         <p>
-          UnityNavMesh3DMT requires the RootMotionComponent to be attached to the Agent GameObject is Uses Root Motion
+          UnityNavMesh3DMT requires the RootMotionComponent to be attached to the Agent GameObject if Uses Root Motion
           is NOT selected.  AStarPathfinding2DMT always requires this component.
+        </p>
+        <h3>Movement Types Listed in TotalAISettings</h3>
+        <hr>
+        <p>
+          Any MovementType that is used in a scene that needs a NavMesh surface to be updated should be listed
+          in the Settings.  This allows TotalAIManager to update all NavMeshes if something in the scene changes
+          during runtime and causes a NavMesh change, such as a World Object being placed on the ground.
         </p>
       </div>
       <div class="col-md-3">

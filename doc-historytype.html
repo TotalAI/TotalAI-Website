@@ -183,10 +183,14 @@
         <h3>What is a History Type?</h3>
         <hr>
         <p>
-          An Agent's History Type is responsible for storing and retrieving an Agent's Knowledge of other Entities.  It is populated
-          by Sensors but can also be modified by MappingTypes.  The TAI History Type is just a simple store and retrieve memory.
-          SeneorTypes populate the Entity Info and then there are various public methods to retrieve Entity info based on the
-          EntityType and the distance to the Entity.
+          <a class="text-link" href="script-historytype.html">Script Reference</a>
+          <br><br>
+          An Agent's History Type is mainly responsible for logging all of an Agent's Plans and Actions.  It can also be used
+          by Input Condition Types to control logic based on past actions, such as cooldown ICTs.
+          <br><br>
+          Total AI comes with two History Types, BaseHT and NoneHT.  The BaseHT logs everything and NoneHT logs nothing.
+          These logs can be viewed in realtime by using the Agent View Editor Window.  Select the Agent and then the click
+          on the History section.
         </p>
       </div>
       <div class="col-md-3">
