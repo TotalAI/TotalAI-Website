@@ -136,7 +136,7 @@
         <h3>What is an Entity?</h3>
         <hr>
         <p>
-          An Entity is an abstract base class that inherits from MonBehaviour.  It is the base class
+          An Entity is an abstract base class that inherits from MonoBehaviour.  It is the base class
           for Agent, World Object, and Agent Event.
         </p>
 
@@ -144,310 +144,35 @@
         <hr>
         <img src="images/Entity.png">
         
-        <h3>Entity Type Info</h3>
-        <hr>
-        <p>
-          All of the major parts of an Agent are defined here.
-          All of these and more can be overriden by using Agent Override Types.
-        </p>
-        <img src="images/ETInfo.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Default Movement Type</nobr></td>
-            <td>See <a class="text-link" href="insp-movementtype.html">Movement Type</a>.</td>
-          </tr>
-          <tr>
-            <td>Default Animation Type</td>
-            <td>See <a class="text-link" href="insp-animationtype.html">Animation Type</a>.</td>
-          </tr>
-          <tr>
-            <td>Use Animator Overrides</td>
-            <td>
-              Should this Agent use the Animator Overrides feature?  It dynamically changes the Animator Override Controller
-              based on InputConditions.<br>
-              See <a class="text-link" href="#animatoroverrides">Animator Overrides</a> below.
-            </td>
-          </tr>
-          <tr>
-            <td>Idle Layer</td>
-            <td>Integer for the layer that the Idle State is located on in the Animator.</td>
-          </tr>
-        </table>
-
-        <h3>Prefab Variants</h3>
-        <hr>
-        <img src="images/ETPrefabVariants.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Drive Type</nobr></td>
-            <td>Order of DriveTypes does not matter.  See <a class="text-link" href="insp-drivetype.html">Drive Type</a>.</td>
-          </tr>
-          <tr>
-            <td>Level</td>
-            <td>The Agent will start the game with the Drive set to this level.</td>
-          </tr>
-          <tr>
-            <td><nobr>Change Per Game Hour</nobr></td>
-            <td>The default change in drive level per game hour.  The length of a game hour is set in the Scene's TimeManager.</td>
-          </tr>
-        </table>
-
-        <h3>Placement Info</h3>
-        <hr>
-        <img src="images/ETPlacementInfo.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Action Type</nobr></td>
-            <td>Order of Action Types does not matter.<br>See <a class="text-link" href="insp-actiontype.html">Action Type</a>.</td>
-          </tr>
-          <tr>
-            <td>Level</td>
-            <td>
-              The Agent will start the game with the Action set to this level.  An Action level or skill can be used
-              as a measure of how good the Agent is at the Action Type.
-            </td>
-          </tr>
-          <tr>
-            <td>Prob</td>
-            <td>The default probablity of the Action level increasing after the Agent performs this Action Type.</td>
-          </tr>
-          <tr>
-            <td><nobr>Change Amount</nobr></td>
-            <td>The default change amount in the Action level if the Action level increases.</td>
-          </tr>
-        </table>
-        
         <h3>Tags</h3>
         <hr>
-        <img src="images/ETTags.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Attribute Type</nobr></td>
-            <td>Order of Attribute Types does not matter.<br>See <a class="text-link" href="insp-attributetype.html">Attribute Type</a>.</td>
-          </tr>
-          <tr>
-            <td>Value</td>
-            <td>The Agent will start the game with the Attribute Type set to this value.</td>
-          </tr>
-          <tr>
-            <td>Range</td>
-            <td>For MinMaxFloatATs this is the min and max values.</td>
-          </tr>
-        </table>
+        <p>
+          Tags can be used by Mapping Types to control who can do what to what.
+          The Entity can be null if the Tag Type does not have an Entity relation.
+          In the image above the Giant (Agent in the scene) is the Overlord to the Agent.
+          Level is usually ignored but can be used if the tag type requires a level.
+          For example, if the Tag Type was Shiny.  The Level could refer to how shiny.
+        </p>
 
-        <h3>Inventory</h3>
-        <hr>
-        <img src="images/ETInventory.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Default Inventory Type</nobr></td>
-            <td>
-              An Inventory Type defines all of the key logic for how inventory should work.
-              TAI currently includes 3D and 2D Base Inventory Types.
-            </td>
-          </tr>
-        </table>
-
-        <h3>Inventory - Can Be In Slots</h3>
-        <hr>
-        <img src="images/ETInventoryCanBeIn.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Inventory Slot</nobr></td>
-            <td>See <a class="text-link" href="insp-inventoryslot.html">Inventory Slot</a>.</td>
-          </tr>
-          <tr>
-            <td>Is Equipped?</td>
-            <td>
-              If the entity is in this slot is it considered to be Equipped?
-              <a class="text-link" href="insp-itemcondition.html">Item Conditions</a> use this status to apply modifiers.
-            </td>
-          </tr>
-          <tr>
-            <td># Locations</td>
-            <td>How many of the slot locations are taken up by this Entity?  Inventory Slots can be multi-location.</td>
-          </tr>
-          <tr>
-            <td>Multi-Slot</td>
-            <td>
-              This allows Entities to take up multiple slots. For example,
-              a two handed sword would take up Right Hand and Left Hand Slots.
-            </td>
-          </tr>
-        </table>
-
-        <h3>Inventory - Transform Mappings</h3>
+        <h3>Overrides</h3>
         <hr>
         <p>
-          A Transform Mapping will change the transform (position, rotation, and scale) of an Entity when
-          it is in a certain inventory slot.  Order does matter as it will choose the first match.
-          If there is no match the Prefab Variant's transform be used.
+          Used to change any setting for this Entity from the default Entity Type configuration.
+          See <a class="text-link" href="insp-entityoverride.html">Entity Override</a>.
         </p>
-        <img src="images/ETInventoryTMs.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>Transform</td>
-            <td>An Empty Game Object Prefab with just a Transform.  When the entity becomes inventory and the
-              following conditions are met the Entity's transform values will be replaced by this one.
-            </td>
-          </tr>
-          <tr>
-            <td>Inventory Slot</td>
-            <td>See <a class="text-link" href="insp-inventoryslot.html">Inventory Slot</a>.</td>
-          </tr>
-          <tr>
-            <td><nobr>Owner Match Type</nobr></td>
-            <td>Type Group, Type Category, or Entity Type: Which one of these three should be used to match on?</td>
-          </tr>
-          <tr>
-            <td>Type Match</td>
-            <td>Will show one of these three fields, Type Group, Type Category, or Entity Type, based on the Owner Match Type.</td>
-          </tr>
-          <tr>
-            <td>Owner Prefab<br>Variant Index</td>
-            <td>Does the owner have to be of a certain Prefab Variant index?  -1 to ignore.</td>
-          </tr>
-          <tr>
-            <td>This Prefab<br>Variant Index</td>
-            <td>Does this Entity have to be of a certain Prefab Variant index?  -1 to ignore.</td>
-          </tr>
-          <tr>
-            <td>State Name Matches</td>
-            <td>Does this Entity need to be in certain states?  Only for World Objects.  Leave list empty to ignore.</td>
-          </tr>
-        </table>
 
-        <h3>Inventory - Attribute Type Modifiers</h3>
+        <h3>Inventory Slot Mappings</h3>
         <hr>
         <p>
-          Use these to have inventory modify attribute Types for an Action or at all times if Item Condition passes.
+          If an Entity Type has Inventory Slots, the mapping of the Inventory Slot to an Entity's Game Object
+          in its Transform hierarchy must be done here.  For example in the image above, the LeftHand and RightHand
+          Inventory Slots are mapped to the Agent's Hand_L and Hand_R Game Objects.  When inventory is added to these
+          slots it will be parented to these Game Objects.
+          <br><br>
+          Inventory Slots can be multi-location so make sure the number of Locations specified matches the
+          Inventory Slot's configuration.
         </p>
-        <img src="images/ETInventoryATMs.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>Item Condition</td>
-            <td>
-              A set of conditions that must be true for the Modifier to be applied.
-              <br>
-              See <a class="text-link" href="insp-itemcondition.html">Item Condition</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Modifier Type</td>
-            <td>
-              On Action or Always: Does the modifier only apply when an Action is occuring?
-              If Always, the Attribute Types min, max, and level can be changed.  If On Action,
-              A MinMaxCurve is used so a random range can be used to change the Attribute Types
-              level just for that Action.
-            </td>
-          </tr>
-          <tr>
-            <td>Attribute Type</td>
-            <td>See <a class="text-link" href="doc-attribute.html">Attribute Type</a>.</td>
-          </tr>
-          <tr>
-            <td>Modify Value Type</td>
-            <td>
-              Add, Multiply, Override, or Veto: How should the value be modified?  Override will replace the
-              value but continue looking at modifiers.  Veto will return the value.
-            </td>
-          </tr>
-          <tr>
-            <td>Default Level Curve Change</td>
-            <td>
-              For On Action Modifier Type.  Will randomly evaluate the Min Max Curve to get the change value.
-              <br>
-              See <a class="text-link" href="insp-minmaxcurve.html">Min Max Curve</a>.
-            </td>
-          </tr>
-          <tr>
-            <td><nobr>Default Level Change</nobr></td>
-            <td>For Always Modifier Type.  A float value to change the level of the Attribute.</td>
-          </tr>
-          <tr>
-            <td>Default Min Change</td>
-            <td>For Always Modifier Type.  A float value to change the min of the Attribute.</td>
-          </tr>
-          <tr>
-            <td>Default Max Change</td>
-            <td>For Always Modifier Type.  A float value to change the max of the Attribute.</td>
-          </tr>
-          <tr>
-            <td>Prefab Variant Value Mappings</td>
-            <td>Same as above but specific to a Prefab Variant.  Use these to override the default modifier values.</td>
-          </tr>
-        </table>
-
-        <h3>Inventory - Action Skill Modifiers</h3>
-        <hr>
-        <img src="images/ETInventoryASMs.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>Item Condition</td>
-            <td>
-              A set of conditions that must be true for the Modifier to be applied.
-              <br>
-              See <a class="text-link" href="insp-itemcondition.html">Item Condition</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Action Types</td>
-            <td>Which Action Types to modify?<br>See <a class="text-link" href="doc-action.html">Action</a>.</td>
-          </tr>
-          <tr>
-            <td>Modify Value Type</td>
-            <td>
-              Add, Multiply, Override, or Veto: How should the value be modified?  Override will replace the
-              value but continue looking at modifiers.  Veto will return the value.
-            </td>
-          </tr>
-          <tr>
-            <td><nobr>Default Value Curve</nobr></td>
-            <td>
-              Will randomly evaluate the Min Max Curve to get the change value for the Action.
-              <br>
-              See <a class="text-link" href="insp-minmaxcurve.html">Min Max Curve</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Prefab Variant Value Mappings</td>
-            <td>Same as above but specific to a Prefab Variant.  Use these to override the default modifier values.</td>
-          </tr>
-        </table>
-
-        <h3>Inventory - Effects</h3>
-        <hr>
-        <img src="images/ETInventoryEffects.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <h3>Inventory - Slots & Default</h3>
-        <hr>
-        <img src="images/ETInventorySlots.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <h3>Entity Modifiers</h3>
-        <hr>
-        <img src="images/ETEntityModifiers.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Entity Modifiers</nobr></td>
-            <td>
-              List of Entity Modifiers.  Will evaluate them in order if multiple trigger at the same time.
-              <br>
-              See <a class="text-link" href="insp-entitymodifier.html">Entity Modifier</a>.
-            </td>
-          </tr>
-        </table>
+        
       </div>
       <div class="col-md-3">
 

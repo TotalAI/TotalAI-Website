@@ -63,7 +63,7 @@
           <h3 class="nav-header">Components</h3>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="insp-agent.html">Agent</a>
+              <a class="nav-link active" href="insp-agent.html">Agent</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="insp-agentevent.html">Agent Event</a>
@@ -123,7 +123,7 @@
               <a class="nav-link" href="insp-inputcondition.html">Input Condition</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="insp-outputchange.html">Output Change</a>
+              <a class="nav-link" href="insp-outputchange.html">Output Change</a>
             </li>
           </ul>
         </div>
@@ -131,102 +131,145 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1><nobr>OutputChange</nobr></h1>
+        <h1><nobr>Agent : Entity : MonoBehaviour</nobr></h1>
         
-        <h3>What is an OutputChange?</h3>
+        <h3>What is an Agent?</h3>
         <hr>
         <p>
-          An Output Change is a plain serializable C# class.  It is used by Mapping Types, Entity Modifiers,
-          and World Object Type's State Transitions.  It holds the values used by its Output Change Type (OCT).
-          The OCT defines what values are required and thus how to draw it in the Editor.
+          An Agent is a component that must be attached to any Game Object that can make decisions and act in the World.
+          An Agent's main field is it's Agent Type, which defines the configuration for the Agent.
           <br><br>
-          See <a class="text-link" href="script-outputchangetype.html">Output Change Type</a>.
+          See <a class="text-link" href="doc-agent.html">Agent Guide</a>.
         </p>
 
-        <h3>Output Changes From Mapping Type</h3>
+        <h3>Agent Custom Inspector</h3>
         <hr>
-        <img src="images/OutputChanges.png">
+        <img src="images/Agent.png">
+        
+        <h3>Basic Info</h3>
+        <hr>
         <table class="table table-dark table-striped table-tai">
           <tr>
-            <td><nobr>Output Change Type</nobr></td>
+            <td>Agent Type</td>
             <td>
-              Defines what values are required and the logic of this Output Change.
+              All Agent's must have an Agent Type.
               <br>
-              See <a class="text-link" href="script-outputchangetype.html">Output Change Type</a>.
+              See <a class="text-link" href="insp-agenttype.html">Agent Type Inspector</a>.
             </td>
           </tr>
           <tr>
-            <td>OCT Specific Fields</td>
+            <td><nobr>Prefab Variant Index</nobr></td>
             <td>
-              The OCT uses its TypeInfo dictionary to state which values it requires.  A full list of possible values can be seen
-              on the OCT API page.
-              <br>
-              See <a class="text-link" href="script-outputchangetype.html">Output Change Type</a>.
+              Entity Types can have multiple Prefab Variants.  This index specifies which Prefab Variant
+              represents this Agent.  Indexing starts at 0.
             </td>
           </tr>
           <tr>
-            <td>Target Type</td>
+            <td>Gender</td>
             <td>
-              What should the target be set to in the OCT's MakeChange?  The options are:
-              <b>To Entity Target, To Self, To Inventory Target, or New Entity</b>.  If To Inventory Target
-              is selected then a Inventory Type Group Match Index must be set.  This references which
-              Input Condition's inventory target to use.
+              Male, Female, or Unknown.
             </td>
           </tr>
           <tr>
-            <td>Timing</td>
+            <td>Start Age</td>
             <td>
-              When should this OC run?<br>
-              <b>OnFinish</b>: Runs right as Mapping finishes.<br>
-              <b>OnAnimationEvent</b>: Runs when Animation Event "AnimationOutputChange" is called.  Can handle 
-              multiple calls by using On Animation Event Occurence.<br>
-              <b>Repeating</b>: Runs every X game minutes.<br>
-              <b>BeforeStart</b>: Runs right before Mapping starts.<br>
-              <b>OnBehaviorInvoke</b>: BehaviorType code will call run Ouput Change.<br>
-              <b>OnTriggerEnter</b>: Runs when Agent enters its Entity Target's trigger.<br>
-              <b>OnCollisionEnter</b>: Runs when Agent collides with its Entity Target's.<br>
-              <b>AfterGameMinutes</b>: Runs once after X game minutes from start of Mapping.<br>
-              <b>OnInterrupt</b>: Runs if Mapping is interrupted.<br>
-              <b>OnQuitAgentEvent</b>: Runs if the Agent quits an Agent Event.<br>
+              When game starts how old is the Agent?
             </td>
           </tr>
           <tr>
-            <td>Change Conditions</td>
+            <td>Faction</td>
             <td>
-              Logic to prevent Ouput Change from running.<br>
-              See <a class="text-link" href="insp-changecondition.html">Change Condition Inspector</a>
+              Does this Agent belong to a Faction?  (A group)
+              See <a class="text-link" href="insp-faction.html">Faction Inspector</a>. 
             </td>
           </tr>
           <tr>
-            <td>Stop Type</td>
+            <td>G Level</td>
             <td>
-              Will failure of this output change cause the Mapping to end?
-              Options are On Change Failed, On CC Failed, On Target Gone, or None.
-              These cascade so for example On Target Gone only fails if target is gone and On CC Failed fails
-              if target is gone or a Change Condition failed.  An Output Change can fail if the OCT's MakeChange
-              method returns false.
+              Similar to R Level for Agent to Agent relation level, 0-100 with 0 being hate, but
+              for the Faction.  0 G Level would mean the Agent has little loyalty to the Faction.
+              <br><br>
+              <i>G Level is not currently used by TAI<br>Should be renamed to F Level</i>
             </td>
           </tr>
           <tr>
-            <td>Block Make Change Forced Stop</td>
+            <td>Main Loop Interval</td>
             <td>
-              OCT's MakeChange can force a Mapping to end.  If this is true the Output Change will ignore this force
-              stop.
+              Waits this many seconds between Main Loop runs.
             </td>
           </tr>
           <tr>
-            <td>Recheck Input Conditions Indexes</td>
+            <td>Max Main Loop <br>Random Wait</td>
             <td>
-              A List of which ICs should be rechecked right before making this change.
+              Waits 0-this (uniform random) many seconds between Main Loop runs.  This value is added
+              to the Main Loop Interval and a new random number is generated every loop.<br>
+              See <a class="text-link" href="doc-agent-main-loop.html">Agent's Main Loop</a>.
             </td>
           </tr>
           <tr>
-            <td>Stop On Recheck Fail</td>
+            <td>Corpse World Object Type</td>
             <td>
-              If any of the rechecks fail should the Mapping end?
+              If the Agent can die and has a corpse it needs to be a World Object Type.
+            </td>
+          </tr>
+          <tr>
+            <td>Corpse Prefab Variant Index</td>
+            <td>
+              The Prefab Variant Index for this Agent's corpse.
+            </td>
+          </tr>
+          <tr>
+            <td>Make New Corpse Game Object</td>
+            <td>
+              Should the Agent Game Object be destroyed and a new World Object Game Object be Created?
+              If not TAI will disable all of the Agent components and add a World Object component to
+              the Agent's Game Object.  This works well if the Agent has a die animation and the corpse
+              needs to match the final pose of the die animation.
+            </td>
+          </tr>
+          <tr>
+            <td>Die Animator Bool Param Name</td>
+            <td>
+              This Animator bool param will be set to true when the Agent dies.
+              It is also possible to use the Die Animator State Name below.
+            </td>
+          </tr>
+          <tr>
+            <td>Die Animator State Name</td>
+            <td>
+              Alternative to Die Animator Bool Param Name.  Specify the State Name for the die animation
+              in the animator.
+            </td>
+          </tr>
+          <tr>
+            <td>Die Wait Time</td>
+            <td>
+              How many seconds to allow the animation to wait?  This works well if the dead Agent needs to stay
+              show for X seconds before being removed.
+            </td>
+          </tr>
+          <tr>
+            <td>Move Inventory To Corpse</td>
+            <td>
+              Should the Agent's inventory be transferred to the World Object corpse?
             </td>
           </tr>
         </table>
+
+        <h3>Role Types</h3>
+        <hr>
+        <p>
+          Role Types for this specific Agent can be added here.  That means they
+          aren't on the Agent Type or any applied Agent Type Overrides.
+          See <a class="text-link" href="doc-role.html">Role</a>.
+        </p>
+
+        <h3>Tags, Overrides, Inventory Slot Mappings</h3>
+        <hr>
+        <p>
+          See <a class="text-link" href="insp-entity.html">Entity Inspector</a>.
+        </p>
+        
       </div>
       <div class="col-md-3">
 

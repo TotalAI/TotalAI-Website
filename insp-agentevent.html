@@ -66,7 +66,7 @@
               <a class="nav-link" href="insp-agent.html">Agent</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="insp-agentevent.html">Agent Event</a>
+              <a class="nav-link active" href="insp-agentevent.html">Agent Event</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="insp-entity.html">Entity</a>
@@ -123,7 +123,7 @@
               <a class="nav-link" href="insp-inputcondition.html">Input Condition</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="insp-outputchange.html">Output Change</a>
+              <a class="nav-link" href="insp-outputchange.html">Output Change</a>
             </li>
           </ul>
         </div>
@@ -131,102 +131,59 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1><nobr>OutputChange</nobr></h1>
+        <h1><nobr>AgentEvent : Entity : MonoBehaviour</nobr></h1>
         
-        <h3>What is an OutputChange?</h3>
+        <h3>What is an Agent Event?</h3>
         <hr>
         <p>
-          An Output Change is a plain serializable C# class.  It is used by Mapping Types, Entity Modifiers,
-          and World Object Type's State Transitions.  It holds the values used by its Output Change Type (OCT).
-          The OCT defines what values are required and thus how to draw it in the Editor.
+          An Agent Event is a component that must be attached to any Game Object that represents an Agent Event
+          which is a multi-agent coordinated Event.
+          An Agent Event's main field is it's Agent Event Type, which defines the configuration for the Agent Event.
           <br><br>
-          See <a class="text-link" href="script-outputchangetype.html">Output Change Type</a>.
+          See <a class="text-link" href="doc-agentevent.html">Agent Event Guide</a>.
         </p>
 
-        <h3>Output Changes From Mapping Type</h3>
+        <h3>Agent Event Custom Inspector</h3>
         <hr>
-        <img src="images/OutputChanges.png">
+        <img src="images/AgentEvent.png">
+
         <table class="table table-dark table-striped table-tai">
           <tr>
-            <td><nobr>Output Change Type</nobr></td>
+            <td><nobr>Agent Event Type</nobr></td>
             <td>
-              Defines what values are required and the logic of this Output Change.
-              <br>
-              See <a class="text-link" href="script-outputchangetype.html">Output Change Type</a>.
+              All Agent Event's must have an Agent Event Type.
+              See <a class="text-link" href="insp-agenteventtype.html">Agent Event Type Inspector</a>.
             </td>
           </tr>
           <tr>
-            <td>OCT Specific Fields</td>
+            <td>State</td>
             <td>
-              The OCT uses its TypeInfo dictionary to state which values it requires.  A full list of possible values can be seen
-              on the OCT API page.
-              <br>
-              See <a class="text-link" href="script-outputchangetype.html">Output Change Type</a>.
+              <i>Read only for debugging.</i><br>
+              Current State of the Agent Event.
             </td>
           </tr>
           <tr>
-            <td>Target Type</td>
+            <td>Creator</td>
             <td>
-              What should the target be set to in the OCT's MakeChange?  The options are:
-              <b>To Entity Target, To Self, To Inventory Target, or New Entity</b>.  If To Inventory Target
-              is selected then a Inventory Type Group Match Index must be set.  This references which
-              Input Condition's inventory target to use.
+              <i>Read only for debugging.</i><br>
+              Who created this Agent Event?
             </td>
           </tr>
           <tr>
-            <td>Timing</td>
+            <td>Attendees</td>
             <td>
-              When should this OC run?<br>
-              <b>OnFinish</b>: Runs right as Mapping finishes.<br>
-              <b>OnAnimationEvent</b>: Runs when Animation Event "AnimationOutputChange" is called.  Can handle 
-              multiple calls by using On Animation Event Occurence.<br>
-              <b>Repeating</b>: Runs every X game minutes.<br>
-              <b>BeforeStart</b>: Runs right before Mapping starts.<br>
-              <b>OnBehaviorInvoke</b>: BehaviorType code will call run Ouput Change.<br>
-              <b>OnTriggerEnter</b>: Runs when Agent enters its Entity Target's trigger.<br>
-              <b>OnCollisionEnter</b>: Runs when Agent collides with its Entity Target's.<br>
-              <b>AfterGameMinutes</b>: Runs once after X game minutes from start of Mapping.<br>
-              <b>OnInterrupt</b>: Runs if Mapping is interrupted.<br>
-              <b>OnQuitAgentEvent</b>: Runs if the Agent quits an Agent Event.<br>
-            </td>
-          </tr>
-          <tr>
-            <td>Change Conditions</td>
-            <td>
-              Logic to prevent Ouput Change from running.<br>
-              See <a class="text-link" href="insp-changecondition.html">Change Condition Inspector</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Stop Type</td>
-            <td>
-              Will failure of this output change cause the Mapping to end?
-              Options are On Change Failed, On CC Failed, On Target Gone, or None.
-              These cascade so for example On Target Gone only fails if target is gone and On CC Failed fails
-              if target is gone or a Change Condition failed.  An Output Change can fail if the OCT's MakeChange
-              method returns false.
-            </td>
-          </tr>
-          <tr>
-            <td>Block Make Change Forced Stop</td>
-            <td>
-              OCT's MakeChange can force a Mapping to end.  If this is true the Output Change will ignore this force
-              stop.
-            </td>
-          </tr>
-          <tr>
-            <td>Recheck Input Conditions Indexes</td>
-            <td>
-              A List of which ICs should be rechecked right before making this change.
-            </td>
-          </tr>
-          <tr>
-            <td>Stop On Recheck Fail</td>
-            <td>
-              If any of the rechecks fail should the Mapping end?
+              <i>Read only for debugging.</i><br>
+              What Agent's are currently attending this Agent Event?
             </td>
           </tr>
         </table>
+
+        <h3>Tags, Overrides, Inventory Slot Mappings</h3>
+        <hr>
+        <p>
+          See <a class="text-link" href="insp-entity.html">Entity Inspector</a>.
+        </p>
+        
       </div>
       <div class="col-md-3">
 
