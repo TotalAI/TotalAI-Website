@@ -120,10 +120,10 @@
               <a class="nav-link" href="insp-roletype.html">Role Type</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="insp-selectortype.html">Selector Type</a>
+              <a class="nav-link active" href="insp-selectortype.html">Selector Type</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="insp-worldobjecttype.html">World Object Type</a>
+              <a class="nav-link" href="insp-worldobjecttype.html">World Object Type</a>
             </li>
           </ul>
           <h3 class="nav-header">Plain C# Classes</h3>
@@ -140,195 +140,68 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1><nobr>WorldObjectType : EntityType : ScriptableObject</nobr></h1>
+        <h1><nobr>SelectorType : ScriptableObject</nobr></h1>
         
-        <h3>What is a World Object Type?</h3>
+        <h3>What is a Selector Type?</h3>
         <hr>
         <p>
-          A World Object Type contains the main configuration for a World Object.  It inherits from Entity Type which
-          is also the base class for Agent Type and Agent Event Type.
+          A Selector Type can be chosen to be used by a Selector.  This is the more complex way to compute
+          a value.  The Selector Type will define a range of possible values, min to max, and a starting value.
+          It will then use it's Selector Factors to calculate a value, add it to the starting value and then
+          clamp it between min and max if needed.
           <br><br>
-          See <a class="text-link" href="doc-worldobject.html">World Object</a> for more info.
+          A Selector Type can handle enum values, either as Choices or as an Attribute Type that is a list of options.
+          In this case the Combine Type must be Normalized Weighted Average and the Selector Factors have to return
+          values in 0-1 range.  The options will be binned and the value returned will fit in one bin which will be
+          selected.  For example if there are 10 choices it would bin the 0-1 float values into the following 10 bins:
+          <br><br>
+          <b>[0,.1), [.1, .2), [.2, .3), [.3, .4), [.4, .5), [.5, .6), [.6, .7), [.7, .8), [.8, .9), [.9, 1]</b>
+          <br><br>
+          If the SFs returned a weighted average value of .6 then choice 7 would be picked since '(' means exclusive
+          and '[' means inclusive.
         </p>
 
-        <h3>World Object Type Custom Inspector</h3>
+        <h3>Selector Type Custom Inspector</h3>
         <hr>
-        <img src="images/WorldObjectType.png">
-        
-        <h3>Entity Type Fields</h3>
-        <hr>
-        <p>
-          See <a class="text-link" href="insp-entitytype.html">Entity Type</a> for info on Entity Type Info, Prefab Variants,
-          Placement Info, Tags, Inventory, and Entity Triggers.
-        </p>
+        <img src="images/SelectorType1.png">
+        <br><br>
+        <img src="images/SelectorType2.png">
 
-        <h3>Complete</h3>
-        <hr>
-        <p>
-          Does this World Object grow or is it built?
-        </p>
-        <img src="images/WOTCompleteBuilt.png">
-        <img src="images/WOTCompleteGrow.png">
         <table class="table table-dark table-striped table-tai">
           <tr>
-            <td>Complete Type</td>
-            <td>None, Built, or Grows</td>
-          </tr>
-          <tr>
-            <td>Items Consumed <br>Per Build</td>
-            <td><i>Currently Not Implemented.</i></td>
-          </tr>
-          <tr>
-            <td>Growth Rate</td>
-            <td>How many game hours for one complete point?  The length of a game hour is set in the Scene's TimeManager.</td>
-          </tr>
-          <tr>
-            <td><nobr>Points To Complete</nobr></td>
-            <td>How many points are required to consider this World Object Completed?</td>
-          </tr>
-          <tr>
-            <td>Auto Scale</td>
-            <td>The Game Object will be scaled in proportion to the complete percentage.  At 100% the scale will be 1.</td>
-          </tr>
-        </table>
-
-        <h3>Damage</h3>
-        <hr>
-        <p>
-          Can this World Object be damaged?
-        </p>
-        <img src="images/WOTDamage.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>Can Be Damaged</td>
-            <td>A Bool indicated that this World Object can be damaged.</td>
-          </tr>
-          <tr>
-            <td>Damage To Destroy</td>
-            <td>How many points until the World Object is fully damaged?</td>
-          </tr>
-          <tr>
-            <td><nobr>Remove on Full Damage</nobr></td>
-            <td>Should the World Object's Game Object be destroyed when fully damaged?</td>
-          </tr>
-        </table>
-
-        <h3>States</h3>
-        <hr>
-        <p>
-          Does this World Object transition between states?
-        </p>
-        <img src="images/WOTStates.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>States</td>
-            <td>Order of States does not matter.</td>
-          </tr>
-          <tr>
-            <td>Name</td>
-            <td>String name of state.  Capitalization matters.</td>
-          </tr>
-          <tr>
-            <td>Is Timed</td>
-            <td>Does this state transition to a new state after X seconds/game minutes?  </td>
-          </tr>
-          <tr>
-            <td>Has Enter<br> Output Changes</td>
+            <td>Start Type</td>
             <td>
-              When entering this state should the selected Output Changes run?
-              The OCs are below in the State Transition Output Changes and the indexing starts at 0.
+              Min, Current Value, Fixed Value, or Max. 
+              What should be the starting value?  The final calulated value is added to this.
             </td>
           </tr>
           <tr>
-            <td>Has Exit<br> Output Changes</td>
+            <td>Min Type</td>
             <td>
-              When exiting this state should the selected Output Changes run?
-              The OCs are below in the State Transition Output Changes and the indexing starts at 0.
+              None, Min, Current Value, or Fixed Value. What is the minimum value allowed?
             </td>
           </tr>
           <tr>
-            <td><nobr>State Transition</nobr><br> Output Changes</td>
+            <td>Max Type</td>
             <td>
-              A list of Ouput Changes that can be run when entering or exiting a state.
-              Slightly reduced set of options from the Mapping Type Output Changes.  The
-              target is always Entity Target which is this World Object.<br>
-              <i>
-                Note: These OCs will be running on a World Object so the Agent will be null.
-                Make sure the OCT can handle a null agent.
-              </i>
-            </td>
-          </tr>
-        </table>
-        
-        <h3>Skin Prefabs</h3>
-        <hr>
-        <p>
-          Does the appearance of this World Object change?
-          The first skin prefab that matches the conditions will show so order matters.
-        </p>
-        <img src="images/WOTSkinPrefabs.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>Skin Game<br> Object Name</td>
-            <td>The name of the Parent Game Object that holds the appearance Game Objects.</td>
-          </tr>
-          <tr>
-            <td>Change Type</td>
-            <td>
-              Replace Game Object: Removes child of Skin Game Object and replaces it with the selected Game Object.<br>
-              Toggle Active: Just toggles Active state of children.  See Enable Type, Disable Type, and Child Start Index below.
+              None, Max, Current Value, or Fixed Value. What is the maximum value allowed?
             </td>
           </tr>
           <tr>
-            <td>Enable Type</td>
-            <td>Enables either the Skin Game Object's children or the children of their children.</td>
-          </tr>
-          <tr>
-            <td>Disable Type</td>
-            <td>None, First, Previous - Which of the Skin Game Object's children should be disabled?</td>
-          </tr>
-          <tr>
-            <td>Child Start<br> Index</td>
-            <td>What index to start at for enabling children?</td>
-          </tr>
-          <tr>
-            <td>Prefab Variant<br> Index</td>
-            <td>Should this skin prefab only be available to one Prefab Variant?  -1 to ignore.  Index starts at 0.</td>
-          </tr>
-          <tr>
-            <td>Complete Range</td>
-            <td>Certain number of complete points required?  -1 to ignore.</td>
-          </tr>
-          <tr>
-            <td>Damage Range</td>
-            <td>Certain number of damage points required?  -1 to ignore.</td>
-          </tr>
-          <tr>
-            <td><nobr>Inventory Slot</nobr><br> Conditions</td>
+            <td>Combine Type</td>
             <td>
-              List of Inventory Slot Conditions required to be in.  Leave list empty to ignore.<br>
-              See <a class="text-link" href="insp-inventoryslotcondition.html">Inventory Slot Condition</a>.
+              Sum, Multiply, or Normalized Weighted Average.  
             </td>
           </tr>
           <tr>
-            <td>States</td>
-            <td>List of States (See Section Above) required to be in.  Leave list empty to ignore.</td>
-          </tr>
-        </table>
-
-        <h3>Recipes</h3>
-        <hr>
-        <p>
-          Can this World Object convert its inventory to new inventory?
-        </p>
-        <img src="images/WOTRecipes.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td><nobr>Recipes</nobr></td>
+            <td><nobr>Selector Factors</nobr></td>
             <td>
-              A list of WOT Inventory Recipes.
-              <br>
-              See <a class="text-link" href="insp-inventoryrecipe.html">WOT Inventory Recipe</a>.
+              Selector Factors are used to dynamically generate values and can use runtime conditions.
+              The multiple Selector Factors are combined based on the Combine Type.  If the Combine Type is
+              Normalized Weighted Average then the weight will determine the impact of each factor.  The
+              weights do not need to add to one but should be greater than zero.
+              <br><br>
+              See <a class="text-link" href="scipt-selectorfactor.html">Selector Factor Script</a>.
             </td>
           </tr>
         </table>
