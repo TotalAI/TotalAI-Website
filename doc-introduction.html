@@ -44,6 +44,9 @@
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
         </li>
+        <li class="nav-item" style="padding-left: 20px;">
+          <a class="nav-link" href="contrib-introduction.html">Contribute Docs</a>
+        </li>
       </ul>
       <ul class="nav justify-content-end">
         <li class="nav-item">
@@ -55,7 +58,7 @@
             </svg>
           </a>
         </li>
-        <li class="nav-item" style="padding-right: 50px;">
+        <li class="nav-item">
           <a class="nav-link" target="_blank" href="https://github.com/TotalAI/TotalAI">
             Download on GitHub
             <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -283,11 +286,16 @@
           There are currently five Levels:
         </p>
         <ul>
-          <li><b><a class="text-link" href="doc-drive.html">Drive</a></b>: Defines a Drive and how the drive's level changes.</li>
-          <li><b><a class="text-link" href="doc-action.html">Action</a></b>: Defines the Behavior used to perform this Action.</li>
-          <li><b><a class="text-link" href="doc-attribute.html">Attribute</a></b>: Defines a property of an Entity along with the level.</li>
-          <li><b><a class="text-link" href="doc-tag.html">Tag</a></b>: All Entities can be tagged which can then be used in planning.</li>
-          <li><b><a class="text-link" href="doc-role.html">Role</a></b>: Can cause Drive Types and Action Types to be added or removed from an Agent.</li>
+          <li><b><a class="text-link" href="doc-drive.html">Drive</a></b>:
+            Drives are motivation for an Agent.  An Agent wants to reduce all of their Drive Levels to 0.</li>
+          <li><b><a class="text-link" href="doc-action.html">Action</a></b>:
+            Defines the Behavior Type used to perform this Action.</li>
+          <li><b><a class="text-link" href="doc-attribute.html">Attribute</a></b>:
+            Defines a property of an Entity along with the level.</li>
+          <li><b><a class="text-link" href="doc-tag.html">Tag</a></b>:
+            All Entities can be tagged which can then be used in planning.</li>
+          <li><b><a class="text-link" href="doc-role.html">Role</a></b>:
+            Can cause Drive Types and Action Types to be added or removed from an Agent.</li>
         </ul>
 
         <h3>Agent's Main Loop</h3>
@@ -312,6 +320,12 @@
           It's Root Mapping (no parent) has to reduce a Drive Type.  The Planner Type is responsible for generating the plans and
           returns a List of Plans that reduce a certain Drive Type.  The Decider Type is then responsible for selecting one of
           the plans.
+          <br><br>
+          The Planner Type is attached to the Decider Type so it is up to the Decider Type on how it uses the
+          Planner Type(s).  For example a Player Controlled Decider Type would not need a Planner Type as the
+          Player would be directly choosing the Mapping to run.
+          <br><br>
+          <i>A Player Controlled Decider Type is not currently implemented but is on TAI's Roadmap.</i>
         </p>
         <h3>Mapping</h3>
         <hr>
@@ -365,14 +379,12 @@
           
           <br><br>
           The Drive with the highest utility is choosen (or an alternate selection algorithm can be used) and the Agent's
-          PlannerType then generates plans and the Agent's DeciderType chooses a plan to reduce this drive.
-          TAI ships with a GOAP and FSM PlannerType to create plans and DeciderTypes
-          that picks the plan with the highest score from a Utility Function.
+          Planner Type then generates plans and the Agent's Decider Type chooses a plan to reduce this drive.
 
           <br><br>
           Choosing a plan can use a <a class="text-link" href="doc-utility-function.html">Utility Function</a>
           that takes into account the rate of decreasing the drive along
-          with any Side-Effects the plan might have.  For example, if the Agent is cold and wants to make a fire they
+          with any side-effects the plan might have.  For example, if the Agent is cold and wants to make a fire they
           could burn their wood house down but the side-effect cost of losing a house would reduce the utility.  They
           would find that the overall utility of gathering wood in the forest and burning that is much higher.
         </p>
