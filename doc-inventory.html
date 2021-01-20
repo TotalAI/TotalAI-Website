@@ -160,6 +160,9 @@
           <h3 class="nav-header">Other</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
+              <a class="nav-link" href="doc-typematching.html">Type Matching</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" href="doc-inventory.html">Inventory</a>
             </li>
             <li class="nav-item">
@@ -200,7 +203,12 @@
           <br><br>
           See <a class="text-link" href="insp-entitytype.html#inventory">Entity Type Inventory Inspector</a>.
         </p>
-        <h3>InventorySlot</h3>
+        <h3>Inventory Type</h3>
+        <hr>
+        <p>
+          
+        </p>
+        <h3>Inventory Slot</h3>
         <hr>
         <p>
           An InventorySlot defines what, how much, and where Entities are stored.  This is accomplished with the
@@ -211,31 +219,39 @@
           <li><b>MaxNumber</b>: How many Entities can be in this slot at once?</li>
           <li><b>TypeCategories</b>: Entities need what TypeCategory to be in this slot?</li>
         </ul>
-        <h3>TypeCategory</h3>
+        See <a class="text-link" href="insp-inventoryslot.html">Inventory Slot Inspector</a>.
+        
+        <h3>Default Slots And Can Be In Slots</h3>
         <hr>
         <p>
-          A TypeCategory is an almost empty ScriptableObject where only the name is used along with a parent TypeCategory field.
-          The parent field allows TypeCategories to be hierarchical.  Every InputOutputType can have any number of TypeCategories.
-          TypeCategories are used in various locations in TAI.
-          <br><br>
-          <i>This should be in its own section</i>
+          Use these to have inventory modify attribute Types for an Action or at all times if Item Condition passes.
         </p>
-        <h3>Inventory ICTs and OCTs</h3>
+
+        <h3>Transform Mappings</h3>
         <hr>
         <p>
-          TAI includes some ICTs and OCTs for dealing with inventory changes.  Of course you can easily created your own
-          or modify these if your game's inventory logic is different.
+          A Transform Mapping will change the transform (position, rotation, and scale) of an Entity when
+          it is in a certain inventory slot.  Order does matter as it will choose the first match.
+          If there is no match the Prefab Variant's transform be used.
         </p>
-        <ul>
-          <li><b>InventoryAmountICT</b>: Does the Agent's inventory have the amount of EntityType specified?</li>
-          <li><b>IsEquippedICT</b>: Is the specified EntityType in a visible InventorySlot?</li>
-          <li><b>InventoryPickupOCT</b>: Picks up the Entity Target.</li>
-          <li><b>InventoryDropOCT</b>: Drops the Entity Target. <i>Is this true?  How is it selected?</i></li>
-          <li><b>InventoryTakeOCT</b>: Takes the specified amount and EntityType from the Entity Target.</li>
-          <li><b>InventoryGiveOCT</b>: Gives the specified amount and EntityType to the Entity Target.</li>
-          <li><b>InventoryCreateOCT</b>: Creates the amount of the specified EntityType.</li>
-          <li><b>InventoryDestroyOCT</b>: Destroys the amount of the specified EntityType.</li>
-        </ul>
+
+        <h3>Attribute Type Modifiers</h3>
+        <hr>
+        <p>
+          Use these to have inventory modify attribute Types for an Action or at all times if Item Condition passes.
+        </p>
+
+        <h3>Action Skill Modifiers</h3>
+        <hr>
+        <p>
+          Use these to have inventory modify attribute Types for an Action or at all times if Item Condition passes.
+        </p>
+
+        <h3>Visual and Sound Effects</h3>
+        <hr>
+        <p>
+          Use these to have inventory modify attribute Types for an Action or at all times if Item Condition passes.
+        </p>
       </div>
       <div class="col-md-3">
 

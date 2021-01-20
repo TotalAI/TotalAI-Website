@@ -159,6 +159,9 @@
           <h3 class="nav-header">Other</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
+              <a class="nav-link" href="doc-typematching.html">Type Matching</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="doc-inventory.html">Inventory</a>
             </li>
             <li class="nav-item">
@@ -192,23 +195,31 @@
         <h3>What are they and how does Total AI use them?</h3>
         <hr>
         <p>
-          A <a class="text-link" target="_blank" href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">ScriptableObject</a>
+          A 
+          <a class="text-link" target="_blank" href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">
+            ScriptableObject
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
           (SO) is a Unity class that allows Unity to create an instance of the class and save it as an asset.
           This asset can then be referenced by Components or by other ScriptableObject assets.
           This makes it perfect for storing data but also excellent for custom logic.
           <br><br>
-          Logic configuration can be done by creating a superclass that is referenced in other SOs or Components and then
-          plugged into different subclasses.  For example, InputConditionType (ICT) is the superclass that all other ICTs inherit
-          from.  The ICT class defines the core methods an ICT class must implement.  This pattern is repeated all over TAI as
-          it provides a perfect method for plug and play customization.
+          Logic configuration can be done by creating a superclass (parent class) that is referenced in other SOs or
+          Components and then the subclass instances (SO Assets) are the ones actually plugged into the field in the Editor.
+          For example, InputConditionType (ICT) is the superclass that all other ICTs inherit from.  The ICT class
+          defines the core methods an ICT class must implement.  This pattern is repeated all over TAI as it provides
+          a perfect method for plug and play customization.
         </p>
         <div style="margin-top: 30px;" class="alert alert-dark" role="alert">
-          Remember a ScriptableObject is an instance of a class that is serialized and saved to disk.
+          Remember a ScriptableObject Asset is an instance of a class that is serialized and saved to disk.
           <hr>
           
-          Each ScriptableObject is shared among all places it is referenced so you can't
+          Each ScriptableObject Asset is shared among all places it is referenced so you can't
           save local state in it. The local state must be passed into every method.  Only save global state.
-          If you do want to save state you can use a global lookup dictionary.  For example, AttributeType uses
+          If you do want to save state you can use a global lookup dictionary.  For example, Attribute Type uses
           a Dictionary(Agent, Data) to save data on a per agent basis.
         </div>
         <h3>Data</h3>
@@ -216,7 +227,13 @@
         <p>
           The common use case for Unity's ScriptableObjects is to store data.  Each ScriptableObject asset can be
           be referenced by many Components, thus saving significant space.  The Unity Manual page for
-          <a class="text-link" target="_blank" href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">ScriptableObject</a>
+          <a class="text-link" target="_blank" href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">
+            ScriptableObject
+            <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
           gives a good explanation of this.
         </p>
         <h3>Logic</h3>
@@ -233,8 +250,7 @@
           Input Condition Types (ICTs) make use of this pattern.  The ICT base class inherits from ScriptableObject and is
           abstract, which means it can't be instantiated and all of its abstract methods must be implemented in classes
           that inherit from it.  ICT only has one abstract method Check.  TAI ships with many ICTs but one commonly used one is
-          ItemAmountICT.  Here's the full code the the ItemAmountICT class:
-
+          ItemAmountICT.
           <br><br>
           The final step is to create the SO asset for the ItemAmountICT.  Since ItemAmountICT has no member variables,
           only one SO asset should be created for it.  This asset can now be plugged into any Input Condition because

@@ -160,6 +160,9 @@
           <h3 class="nav-header">Other</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
+              <a class="nav-link" href="doc-typematching.html">Type Matching</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="doc-inventory.html">Inventory</a>
             </li>
             <li class="nav-item">
@@ -321,29 +324,7 @@
           Selectors are required to select the desired values for the Behavior Type.
           They are also used by Ouput Changes to select values.
           <br><br>
-          See <a class="text-link" href="doc-selector.html">Selector</a>,
-        </p>
-        
-        <h3>AttributeFactors</h3>
-        <hr>
-        <p>
-          AttributeFactors (AFs) are similar to TargetFactors but are used to dynamically select the value of an
-          AttributeType for a BehaviorType.  They can be used to eaither select a float value within a range or
-          make a choice out of a fixed number of choices.  An AF has one main method, Evaluate.  This returns a
-          float between 0-1.  This represents the normalized choice of that particular AttributeFactor.  For example
-          if the AttributeType is a MinMaxFloatAT with a range of 0-10 and the AF returns 0.6 it means the AF is
-          voting for a float value of 6.  Instead if its for an EnumStringAT with 10 choices it would bin the 0-1 float
-          values into the following 10 bins:
-          <br><br>
-          <b>[0,.1), [.1, .2), [.2, .3), [.3, .4), [.4, .5), [.5, .6), [.6, .7), [.7, .8), [.8, .9), [.9, 1]</b>
-          <br><br>
-          If the AF returned a value of .6 it would be voting for choice 7 since '(' means exclusive and '[' means
-          inclusive.
-          <br><br>
-          Similar to TFs multiple AFs would be combined with a weighted average.  Also AFs can decide
-          not to contribute by returning -1f or respond with a veto (veto is an out bool varible).  The veto means
-          the value it returns is chosen.  This causes the order of the AFs to matter since the first veto will
-          be selected and the other AFs will not be run.
+          See <a class="text-link" href="doc-selector.html">Selector Guide</a>.
         </p>
       </div>
       <div class="col-md-3">

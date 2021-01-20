@@ -16,7 +16,7 @@
     <title>Total AI</title>
   </head>
   <body>
-    
+   
     <nav class="navbar sticky-top tai-navbar">
       <a class="navbar-brand" style="margin-top: -8px; margin-bottom: -8px;" href="index.html">
         <img src="images/TotalAILogoTrans.png" height="40" alt="" loading="lazy">
@@ -63,7 +63,6 @@
         </li>
       </ul>
     </nav>
-     
     <main style="width: 100%">
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
@@ -89,7 +88,7 @@
               <a class="nav-link" href="doc-worldobject.html">WorldObject</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="doc-agentevent.html">AgentEvent</a>
+              <a class="nav-link" href="doc-agentevent.html">AgentEvent</a>
             </li>
           </ul>
           <h3 class="nav-header">Levels</h3>
@@ -160,7 +159,7 @@
           <h3 class="nav-header">Other</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
-              <a class="nav-link" href="doc-typematching.html">Type Matching</a>
+              <a class="nav-link active" href="doc-typematching.html">Type Matching</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="doc-inventory.html">Inventory</a>
@@ -192,58 +191,46 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1>Agent Event</h1>
+        <h1>Type Matching</h1>
         
-        <h3>What is an Agent Event?</h3>
+        <h3>What is a Type Matching?</h3>
         <hr>
         <p>
-          An Agent Event allows for coordinated mult-agent events to occur.  Every Agent Event has to have an Agent creator and
-          other Agents called attendees.  An Agent Event has the following life cycle:
-          <ul>
-            <li><b>Waiting</b>: Starts in this state after creation.  Stays here until enough agents have joined or it times out.</li>
-            <li><b>Starting</b>: Enough Agents have joined.  The Event is now Starting.</li>
-            <li><b>Running</b>: The Agent Event will continue to run until the end criteria is met.</li>
-            <li><b>Ending</b>: End criteria met.  Agent Event is wrapping up and will be destroyed once all Agents have quit.</li>
-          </ul>
-          The key to how Agent Events work is how every Agent in the Event can be assigned Role Types.  Role Types can completely
-          change an Agent's Drives and Actions.  A simple example of an Agent Event would be a Conversation between two Agents.
-          One Agent would create the Event and the second one would join.  Each Agent could then be assigned the same Role Type
-          which would cause them to only have one Drive, Social, and one Action, Converse.  They would then do this until the
-          Agent Event timed out or one of them quit.
+          Total AI uses Type Categories and Type Groups to enable more generalized Type matching versus just
+          matching on a specific Entity Type.  This can be seen in various locations in TAI specifically
+          in Input Conditions and Inventory Slots.
+          <br><br>
+          <img src="Images/TypeMatching.png">
+          <br><br>
+          This will be seen in the UI as two fields, Match Type and [Match Type] Match.
+          Match Type will be Type Group, Type Category, or Entity Type and then based on the one selected
+          choose a Match.
         </p>
-        <h3>Agent Event Type</h3>
+        <h3>Type Category</h3>
         <hr>
         <p>
-          An Agent Event Type <b>defines the default configuration</b> for a Agent Event.  The following sections outline
-          the configuration options.
+          A Type Category is an almost empty ScriptableObject where only the name is used along with a
+          parent Type Category field.  The parent field allows Type Categories to be hierarchical, which
+          allows for matching on all descendants.  For example TAI's Quick Setup generates an "All"
+          Type Category which is recommend to be the only Type Category with no parent.  This was All
+          will match every Entity Type.  Every Entity Type can have any number of Type Categories.
+          Type Categories are used in various locations in TAI.  
+          <br><br>
+          See <a class="text-link" href="insp-typecategory.html">Type Category Inspector</a>.
         </p>
-        <h3>Timing</h3>
+        <h3>Type Group</h3>
         <hr>
         <p>
-          Various options on waiting times and running time limits.  Also defines certain end event criteria.
-        </p>
-        <h3>Attendees</h3>
-        <hr>
-        <p>
-          Min and max number of attendees and a filter for min R level (R level of the creator to the attendee)
-          and if to only allow Faction members to join.
-        </p>
-        <h3>Sound</h3>
-        <hr>
-        <p>
-          Select a sound to play while waiting and if it should be looped.
-        </p>
-        <h3>Role Types</h3>
-        <hr>
-        <p>
-          An Agent Event Type <b>defines the default configuration</b> for a Agent Event.
+          Type Group is a more advanced matching method.  It allows multiple Type Categories to be combined and
+          then the ability to include or exclude specific Entity Types.  If Type Categories can't capture the matching
+          required, Type Groups can be used.
+          <br><br>
+          See <a class="text-link" href="insp-typegroup.html">Type Group Inspector</a>.
         </p>
       </div>
       <div class="col-md-3">
-
       </div>
     </div>
-
     </main>
 
     <script>

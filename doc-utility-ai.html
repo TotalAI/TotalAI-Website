@@ -160,6 +160,9 @@
           <h3 class="nav-header">Other</h3>
           <ul class="nav flex-column navbar-light">
             <li class="nav-item">
+              <a class="nav-link" href="doc-typematching.html">Type Matching</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="doc-inventory.html">Inventory</a>
             </li>
             <li class="nav-item">
@@ -221,17 +224,21 @@
               Currently it uses the Mapping Types Target Factors to select the best Entity Target/Inventory Target.  A future feature
               will allow all targets to be chosen as separate Plans, allowing the Utility Modifiers to also figure in
               Targets.
+              <br><br>
             </li>
             <li>
               <b>UtilityAIDT</b>:
               The Decider Type should have UtilityAIPT set as its only Planner Type.  It also requires a "fake" Drive Type.
               Create a "Default" Drive Type and set in in inspector.  This allows Utility AI to play nice with the rest of
               Total AI.  The Drive Type can be ignored though and does not need to be reduced in Mapping Types.
+              <br><br>
             </li>
             <li>
               <b>Mapping Type's Utility Modifiers</b>:
               Generates a utility value based on the current state of the Agent and the World.  The logic is contained in its
-              Utility Modifier Type.  See <a href="insp-utilitymodifier.html">Utilty Modifier Inspector</a>.
+              Utility Modifier Type.
+              See <a class="text-link" href="script-utilitymodifiertype.html">Utilty Modifier Type Script</a>.
+              <br><br>
             </li>
             <li>
               <b>UtilityAIUFT</b>:
