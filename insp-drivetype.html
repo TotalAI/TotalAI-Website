@@ -163,102 +163,14 @@
           A Drive Type represents a type of Drive that would motivate an Agent to perform certain Mappings
           in order to reduce this Drive Level.  The Drive Type mostly defines how the Level changes.
           <br><br>
-          See <a href="doc-drive.html">Drive Guide</a>.
+          See <a class="text-link" href="doc-drive.html">Drive Guide Page</a>.
         </p>
 
         <h3>Drive Type Custom Inspector</h3>
         <hr>
-        <img src="images/DriveType.png">
-        <table class="table table-dark table-striped table-tai">
-          <tr>
-            <td>Action Type</td>
-            <td>
-              Which Action Type does this Mapping Type belong to?  The Mapping Type will use the settings in the Action Type
-              including the Action Type's Behavior Type.
-              <br>
-              See <a class="text-link" href="insp-actiontype.html">Action Type</a>.
-            </td>
-          </tr>
-          <tr>
-            <td><nobr>Go To Action Type</nobr></td>
-            <td>
-              Special Action Type used to move the Agent within interaction distance to perform the Mapping Type.
-              Can be left blank if no Go To is required.
-              <br>
-              See <a class="text-link" href="insp-actiontype.html">Action Type</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Filter Options</td>
-            <td>
-              Neither, Use Blacklist, or Use Whitelist: Allows for more control over Agent Types being able to
-              perform this specific Mapping Type fi the Agent Type has this Mapping Type's Action Type.
-            </td>
-          </tr>
-          <tr>
-            <td>Max Distance As Input</td>
-            <td>
-              Can be used to override the max distance as input from the Action Type and the Entity Type.
-              Leave 0 to not override.
-            </td>
-          </tr>
-          <tr>
-            <td>Entity Target Search Radius</td>
-            <td>
-              How far away can an Entity Target be to be considered a possible target?
-              Leave 0 to not override the Action Type value.</td>
-          </tr>
-          <tr>
-            <td>Reevaluate Targets</td>
-            <td>
-              Force Mapping to get new targets right before running.  This is only needed for running
-              plans that chain Mappings together, such as the GOAP Planner.
-            </td>
-          </tr>
-          <tr>
-            <td>Utility Modifiers</td>
-            <td>
-              Utility AI like modifiers for this Mapping Type.
-              <br>
-              See <a class="text-link" href="insp-utilitymodifier.html">Utility Modifier</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Target Factors</td>
-            <td>
-              Utility AI like way to select an Entity Target.  Weights do not need to add to one.
-              <br>
-              See <a class="text-link" href="insp-targetfactor.html">Target Factor</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Inventory Target Factors</td>
-            <td>
-              Utility AI like way to select the inventory Entity Target(s).  Weights do not need to add to one.
-              <br>
-              See <a class="text-link" href="insp-targetfactor.html">Target Factor</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Input Conditions</td>
-            <td>
-              All Input Conditions must pass for the Agent to be able to perform this Mapping Type.
-              If an Input Condition fails a planner can try to chain it to an Output Change from another Mapping Type.
-              Currently only the GOAP Planner chains.
-              <br>
-              See <a class="text-link" href="insp-inputcondition.html">Input Condition</a>.
-            </td>
-          </tr>
-          <tr>
-            <td>Output Changes</td>
-            <td>
-              What changes occur due to this Mapping Type?  These can potentially "fix" a failed Input Condition if
-              the Planner handles chaining ICs to OCs.
-              <br>
-              See <a class="text-link" href="insp-outputchange.html">Output Change</a>.
-            </td>
-          </tr>
-        </table>
+        <p>
+          <i>Coming Soon</i>
+        </p>
       </div>
       <div class="col-md-3">
 

@@ -244,36 +244,7 @@
           actually generate the Plans that it will then use to decide which Plan to run.  It is most common for a Decider Type
           to have one Planner Type.
         </p>
-        <h3>Decider Type Methods</h3>
-        <hr>
-        <p style="margin-right: -300px;">
-          <pre style="margin-right: -300px;"><code class="csharp">
-  public virtual Dictionary&lt;DriveType, Plans&gt; GetPlans(
-    Agent agent,
-    Dictionary<DriveType, float> currentDriveTypesRanked,
-    Plans previousPlans,
-    int previousPlansIndex,
-    bool previouslyInterrupted,
-    out DriveType currentDriveType)
-          </code></pre>
-          sdfsfsdf
-          <pre style="margin-right: -300px;"><code>
-  public virtual bool ShouldInterrupt(Agent agent, Mapping currentMapping, float currentPlanUtility, float lastReplanTime, out float newReplanTime)
-  public virtual bool ShouldPlan(Mapping currentMapping)
-  public virtual int ChooseNewPlan(Agent agent, Mapping currentMapping, DriveType newDriveType, Dictionary<DriveType, Plans> newPlans, out DriveType selectedDriveType, out Mapping newMapping, out float bestUtility)
-  public virtual int MaybeChangePlan(Agent agent, Mapping currentMapping, DriveType newDriveType, Dictionary<DriveType, Plans> newPlans, out DriveType selectedDriveType, out Mapping newMapping, out float bestUtility)
-  public virtual bool StartMapping(Agent agent, Mapping mapping)
-  public virtual void MappingFinished(Agent agent, Mapping mapping)
-  public virtual void InterruptMapping(Agent agent, Mapping currentMapping, bool cameFromBehavior)
-
-  public virtual void Setup(List<AttributeType> attributeTypes, PlannerType plannerType)
-  public virtual Dictionary<DriveType, Plans> DefaultPlans(Agent agent, out DriveType currentDriveType, out Mapping newMapping)
-  public virtual bool RecheckInputConditions(Agent agent, Mapping mapping)
-  public virtual Mapping MaybeAddGoToMapping(Mapping mapping)
-  public virtual bool RunOutputChanges(Agent agent, Mapping mapping, OutputChange.Timing timing, Dictionary<OutputChange, float> lastUpdateTimes = null)
-  public virtual Dictionary<DriveType, float> RankDrives(Dictionary<DriveType, Drive> drives)
-          </code></pre>
-        </p>
+        
       </div>
       <div class="col-md-3">
 
