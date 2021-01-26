@@ -5,8 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="images/TotalAILogoTrans32.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -16,7 +19,7 @@
     <title>Total AI</title>
   </head>
   <body>
-    
+  
     <nav class="navbar sticky-top tai-navbar">
       <a class="navbar-brand" style="margin-top: -8px; margin-bottom: -8px;" href="index.html">
         <img src="images/TotalAILogoTrans.png" height="40" alt="" loading="lazy">
@@ -27,7 +30,7 @@
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="doc-introduction.html">Guide</a>
+          <a class="nav-link" href="doc-introduction.html">Guide</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="insp-introduction.html">Inspectors</a>
@@ -45,7 +48,7 @@
           <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item" style="padding-left: 25px;">
-          <a class="nav-link" href="contrib-introduction.html">Contribute</a>
+          <a class="nav-link active" href="contrib-introduction.html">Contribute</a>
         </li>
       </ul>
       <ul class="nav justify-content-end">
@@ -78,128 +81,32 @@
         </li>
       </ul>
     </nav>
-     
     <main style="width: 100%">
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
         <div class="col-md-3 col-xl-2" style="position: sticky; top: 0; z-index: 1000; height: calc(100vh - 4rem); order: 0; overflow-y: auto; padding-top: 10px; padding-bottom: 40px;">
-          <h3 class="nav-header">Getting Started</h3>
+          <h3 class="nav-header">Contribute</h3>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="doc-introduction.html">Introduction</a>
+              <a class="nav-link" href="contrib-introduction.html">Introduction</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-installation.html">Install & Setup</a>
+              <a class="nav-link" href="contrib-guidelines.html">Guidelines</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-demo.html">Demo Worlds</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Entities</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-agent.html">Agent</a>
+              <a class="nav-link" href="contrib-codeofconduct.html">Code of Conduct</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-worldobject.html">WorldObject</a>
+              <a class="nav-link" href="contrib-roadmap.html">Roadmap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-agentevent.html">AgentEvent</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Levels</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-drive.html">Drive</a>
+              <a class="nav-link" href="contrib-integrations.html">Integrations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-action.html">Action</a>
+              <a class="nav-link active" href="contrib-typepacks.html">Type Packs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc-attribute.html">Attribute</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-tag.html">Tag</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="doc-role.html">Role</a>
-            </li>
-          <h3 class="nav-header">Agent</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-agent-main-loop.html">Main Loop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-movementtype.html">Movement Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-animationtype.html">Animation Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-sensortype.html">Sensor Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-memorytype.html">Memory Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-decider.html">Decider</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-plannertype.html">Planner Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-mapping.html">Plans & Mappings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-behavior.html">Behavior</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-historytype.html">History Type</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">AI Types</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-fsm.html">FSM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-goap.html">GOAP</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-utility-ai.html">Utility AI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-deep-rl.html">Deep RL</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Other</h3>
-          <ul class="nav flex-column navbar-light">
-            <li class="nav-item">
-              <a class="nav-link" href="doc-typematching.html">Type Matching</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-inventory.html">Inventory</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-design-principles.html">Design Principles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-scriptableobjects.html">ScriptableObjects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-selector.html">Selector</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-utility-curve.html">Utility Curve</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-utility-function.html">Utility Function Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-included-ui.html">UI & Placement</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doc-more-resources.html">External Links</a>
+              <a class="nav-link" href="contrib-add-ons.html">Add-Ons</a>
             </li>
           </ul>
         </div>
@@ -207,31 +114,37 @@
 
       </div>
       <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1>Role</h1>
         
-        <h3>What is a Role and a Role Type?</h3>
+        <h1>Type Packs</h1>
+        
+        <h3>What Are Type Packs?</h3>
         <hr>
         <p>
-          <a class="text-link" href="insp-roletype.html">Inspector Reference</a>
-          <br>
-          <a class="text-link" href="script-roletype.html">Script Reference</a>
+          A Type Pack represents a set of Custom Types for TAI that all work together to create an AI for a type
+          of game.  For example a Type Pack could be for an RTS or for a world builder style game.
           <br><br>
-          A Role Type allows for an easy way to add a collection of Action Types and Drive Types to an Agent.
-          These can also override the Agent's existing Action Types and Drive Types.  Agent Event's take
-          advantage of this by assigning roles to the attendees in the Event which then can completely alter
-          the Agent's Drives and Actions during the Event.
-          <br><br>
-          A RoleType can also have Input Conditions.  The Role will not be active unless the Input Conditions
-          are satisfied.
-          <br><br>
-          A Role's level is ignored by Total AI but might be useful if a skill level at a role is required.
+          If you create a Type Pack let us know and we will add it to this documentation or we can add it to
+          a Type Packs repo in Total AI.
         </p>
+
+        <h3>Current Type Packs</h3>
+        <hr>
+        <p>
+          None.
+        </p>
+
+        <h3>Requested Type Packs</h3>
+        <hr>
+        <p>
+          None.
+          <br><br>
+          <i>Use TAI's Discord to let people know what Type Packs you would like to see.</i>
+        </p>
+
       </div>
       <div class="col-md-3">
-
       </div>
     </div>
-
     </main>
 
     <script>

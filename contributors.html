@@ -7,7 +7,9 @@
     <link rel="icon" href="images/TotalAILogoTrans32.png" type="image/x-icon"> 
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -17,7 +19,7 @@
     <title>Total AI</title>
   </head>
   <body>
-    
+
     <nav class="navbar sticky-top tai-navbar">
       <a class="navbar-brand" style="margin-top: -8px; margin-bottom: -8px;" href="index.html">
         <img src="images/TotalAILogoTrans.png" height="40" alt="" loading="lazy">
@@ -31,7 +33,7 @@
           <a class="nav-link" href="doc-introduction.html">Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="insp-introduction.html">Inspectors</a>
+          <a class="nav-link" href="insp-introduction.html">Inspectors</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="script-introduction.html">Scripts</a>
@@ -40,7 +42,7 @@
           <a class="nav-link" href="videos.html">Videos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contributors.html">Contributors</a>
+          <a class="nav-link active" href="contributors.html">Contributors</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
@@ -79,130 +81,50 @@
         </li>
       </ul>
     </nav>
-     
+    
     <main style="width: 100%">
-    <div class="container-fluid">
-      <div class="row flex-xl-nowrap">
-        <div class="col-md-3 col-xl-2" style="position: sticky; top: 0; z-index: 1000; height: calc(100vh - 4rem); order: 0; overflow-y: auto; padding-top: 10px; padding-bottom: 40px;">
-          <h3 class="nav-header">Components</h3>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="insp-agent.html">Agent</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-agentevent.html">Agent Event</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="insp-entity.html">Entity</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-worldobject.html">World Object</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">ScriptableObjects</h3>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="insp-actiontype.html">Action Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-agenttype.html">Agent Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-agenteventtype.html">Agent Event Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-drivetype.html">Drive Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-entitytrigger.html">Entity Trigger</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-entitytype.html">Entity Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-faction.html">Faction</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-inventoryslot.html">Inventory Slot</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-itemcondition.html">Item Condition</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-mappingtype.html">Mapping Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-roletype.html">Role Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-selectortype.html">Selector Type</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-worldobjecttype.html">World Object Type</a>
-            </li>
-          </ul>
-          <h3 class="nav-header">Plain C# Classes</h3>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="insp-inputcondition.html">Input Condition</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insp-outputchange.html">Output Change</a>
-            </li>
-          </ul>
+      <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+          <div class="col main-header">
+            Contributors
         </div>
-      <div class="col-md-1">
-
       </div>
-      <div class="col content" style="padding-top: 40px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
-        <h1><nobr>Entity (Abstract) : MonoBehaviour</nobr></h1>
-        
-        <h3>What is an Entity?</h3>
-        <hr>
-        <p>
-          An Entity is an abstract base class that inherits from MonoBehaviour.  It is the base class
-          for Agent, World Object, and Agent Event.
-        </p>
-
-        <h3>Entity Base Custom Inspector</h3>
-        <hr>
-        <img src="images/Entity.png">
-        
-        <h3>Tags</h3>
-        <hr>
-        <p>
-          Tags can be used by Mapping Types to control who can do what to what.
-          The Entity can be null if the Tag Type does not have an Entity relation.
-          In the image above the Giant (Agent in the scene) is the Overlord to the Agent.
-          Level is usually ignored but can be used if the tag type requires a level.
-          For example, if the Tag Type was Shiny.  The Level could refer to how shiny.
-        </p>
-
-        <h3>Overrides</h3>
-        <hr>
-        <p>
-          Used to change any setting for this Entity from the default Entity Type configuration.
-          See <a class="text-link" href="insp-entityoverride.html">Entity Override</a>.
-        </p>
-
-        <h3>Inventory Slot Mappings</h3>
-        <hr>
-        <p>
-          If an Entity Type has Inventory Slots, the mapping of the Inventory Slot to an Entity's Game Object
-          in its Transform hierarchy must be done here.  For example in the image above, the LeftHand and RightHand
-          Inventory Slots are mapped to the Agent's Hand_L and Hand_R Game Objects.  When inventory is added to these
-          slots it will be parented to these Game Objects.
-          <br><br>
-          Inventory Slots can be multi-location so make sure the number of Locations specified matches the
-          Inventory Slot's configuration.
-        </p>
-        
-      </div>
-      <div class="col-md-3">
-
+      <div class="row flex-xl-nowrap">
+        <div class="col-2"></div>
+        <div class="col content" style="padding-top: 20px; padding-bottom: 40px; line-height: 1.6em; color: #304455; font-size: 1rem;">
+          <h3>Financial Backers on Patreon</h3>
+          <hr>
+          <p>
+            <a class="text-link" target="_blank" href="https://patreon.com/zacwarren">
+              Patreon
+              <svg width="1em" height="1em" viewBox="0 0 20 20" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+            </a>
+            <br><br>
+            Be the first!  Your name/company, logo, and link will go here.  Currently all proceeds go to paying the
+            creator of TAI, Zac Warren, to continue development.
+          </p>
+          <h3>Development/Website Contributors</h3>
+          <hr>
+          <p>
+            Zac Warren
+          </p>
+          <h3>You Can Contribute!</h3>
+          <hr>
+          <p>
+            Come join the Total AI Development Community!  Submit a bug report or a feature request, build
+            a new feature, fix a bug, or help with documentation.  All contributions are welcome.
+            <br><br>
+            See <a class="text-link" href="contrib-introduction.html">Contribute</a> for more information.
+          </p>
+        </div>
+        <div class="col-2"></div>
       </div>
     </div>
 
+    </div>
     </main>
 
     <script>
